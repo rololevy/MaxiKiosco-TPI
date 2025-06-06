@@ -55,7 +55,7 @@ void Productos::cargar() {
     cin >> id;
     setIDProducto(id);
 
-    cin.ignore(); // limpiar buffer
+    cin.ignore(); 
 
     cout << "Ingrese nombre del producto: ";
     getline(cin, nombre);
