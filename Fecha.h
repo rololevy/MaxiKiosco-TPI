@@ -1,19 +1,31 @@
 #pragma once
-#include <string>
 
+///DECLARACION DE METODO
 
 class Fecha{
-    private:
+  private:
     int _dia, _mes, _anio;
+  public:
 
-    public:
+    ///constructor
     Fecha();
-    Fecha(int dia, int mes, int anio);
+    Fecha(int dia,int mes,int anio);
+
 
     int getDia();
-    int getMes();
-    int getAnio();
     void setDia(int dia);
+
+    int getMes();
     void setMes(int mes);
+
+    int getAnio();
     void setAnio(int anio);
+
+    void Cargar();
+    void Mostrar();
+
+    bool esBisiesto(int anio);
+    bool validarFecha(int dia, int mes, int anio);
+
+
 };
