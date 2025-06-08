@@ -73,7 +73,7 @@ void Productos::setEstado (bool estado){
 
  _estado= estado;
 }
-
+/*
 void Productos::cargar() {
     string nombre, tipo;
     float precio;
@@ -119,3 +119,5 @@ void Productos::mostrar() {
 void Productos::eliminar() {
     _estado = false;
 }
+*/ 
+///ESTO LO HACE EL MANAGER
