@@ -48,19 +48,17 @@ int Productos::getstock() {
 bool Productos::getEstado (){
 return _estado;
 }
-
-void Productos::setIDProducto(int ID) {
-    _IDProducto = ID;
+///--------------------------------------------------------------------------------------------------
+void Productos::setIDProducto(std::string IDProducto) {
+    strcpy (_IDProducto, IDProducto.c_str());
 }
 
-void Productos::setnombreProducto(string nombre) {
-    strncpy(_nombreProducto, nombre.c_str(), sizeof(_nombreProducto));
-    _nombreProducto[sizeof(_nombreProducto) - 1] = '\0';
+void Productos::setnombreProducto(std::string nombre) {
+   strcpy (_nombreProducto, nombre.c_str());
 }
 
-void Productos::settipoProducto(string tipo) {
-    strncpy(_tipoProducto, tipo.c_str(), sizeof(_tipoProducto));
-    _tipoProducto[sizeof(_tipoProducto) - 1] = '\0';
+void Productos::settipoProducto(std::string tipo) {
+    strcpy (_tipo, tipo.c_str());
 }
 
 void Productos::setprecioUnitario(float precio) {
