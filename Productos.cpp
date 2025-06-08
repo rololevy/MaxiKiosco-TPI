@@ -39,6 +39,9 @@ float Productos::getprecioUnitario() {
 int Productos::getstock() {
     return _stock;
 }
+bool Productos::getestado (){
+return _estado;
+}
 
 void Productos::setIDProducto(int ID) {
     _IDProducto = ID;
@@ -60,6 +63,11 @@ void Productos::setprecioUnitario(float precio) {
 
 void Productos::setstock(int stock) {
     _stock = stock;
+}
+
+void Productos::setEstado (bool estado){
+
+ _estado= estado;
 }
 
 void Productos::cargar() {
