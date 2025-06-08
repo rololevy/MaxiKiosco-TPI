@@ -20,6 +20,7 @@ public:
     std::string gettipoProducto();
     float getprecioUnitario();
     int getstock();
+    bool getEstado();
 
     void setIDProducto(int ID);
     void setnombreProducto(std::string nombre);
