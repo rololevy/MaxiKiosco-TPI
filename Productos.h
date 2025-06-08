@@ -12,9 +12,12 @@ private:
     bool _estado;
 
 public:
+    Producto ();
+    Producto(std::string IDProducto, std::string nombreProducto, std::string tipoProducto, float precio, int stock, bool estado);
+    
     int getIDProducto();
-    const char* getnombreProducto();
-    const char* gettipoProducto();
+    std::string getnombreProducto();
+    std::string gettipoProducto();
     float getprecioUnitario();
     int getstock();
 
