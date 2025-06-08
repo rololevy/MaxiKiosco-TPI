@@ -3,16 +3,21 @@
 #include "Productos.h"
 
 using namespace std;
+ Producto(std::string IDProducto, std::string nombreProducto, std::string tipoProducto, float precio, int stock, bool estado){
 
-int Productos::getIDProducto() {
+
+     
+ };
+
+std::string Productos::getIDProducto() {
     return _IDProducto;
 }
 
-const char* Productos::getnombreProducto() {
+std::string Productos::getnombreProducto() {
     return _nombreProducto;
 }
 
-const char* Productos::gettipoProducto() {
+std::string Productos::gettipoProducto() {
     return _tipoProducto;
 }
 
