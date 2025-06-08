@@ -15,6 +15,12 @@ strcpy (_tipoProducto, "");
  
 };
  Productos::Producto(std::string IDProducto, std::string nombreProducto, std::string tipoProducto, float precio, int stock, bool estado){
+strcpy(_IDProducto, IDProducto.c_str());
+strcpy (_nombreProducto, nombreProducto.c_str());
+strcpy (_tipoProducto, tipoProducto.c_str());
+ _precioUnitario= precio;
+ _stock= stock;
+ _estado= estado;
 
 
      
