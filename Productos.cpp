@@ -3,7 +3,18 @@
 #include "Productos.h"
 
 using namespace std;
- Producto(std::string IDProducto, std::string nombreProducto, std::string tipoProducto, float precio, int stock, bool estado){
+
+Productos::Producto(){
+strcpy(_IDProducto, "");
+strcpy (_nombreProducto, "");
+strcpy (_tipoProducto, "");
+ _precioUnitario=0;
+ _stock=0;
+ _estado=0;
+
+ 
+};
+ Productos::Producto(std::string IDProducto, std::string nombreProducto, std::string tipoProducto, float precio, int stock, bool estado){
 
 
      
