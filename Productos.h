@@ -26,6 +26,7 @@ public:
     void settipoProducto(std::string tipo);
     void setprecioUnitario(float precio);
     void setstock(int stock);
+    void setEstado (bool estado);
 
     void cargar();
     void mostrar();
