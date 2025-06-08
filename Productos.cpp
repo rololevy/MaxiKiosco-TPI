@@ -45,7 +45,7 @@ float Productos::getprecioUnitario() {
 int Productos::getstock() {
     return _stock;
 }
-bool Productos::getestado (){
+bool Productos::getEstado (){
 return _estado;
 }
 
