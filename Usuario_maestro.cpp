@@ -82,3 +82,12 @@ cin>>estado;
 
 
 }
+
+void listarProductos(){
+
+ ProductosArchivo pProductos;
+ Productos registro;
+ int cantidadRegistros;
+
+
+}

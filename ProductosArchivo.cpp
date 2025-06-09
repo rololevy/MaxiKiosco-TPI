@@ -25,3 +25,27 @@ bool ProductosArchivo::guardar (Productos registro){
 
  return seguardo;
 }
+
+int ProductosArchivo::cantidadTotalProductos (){
+
+int tamRegistro, total, cantidad;
+
+FILE *pFile;
+
+pFile = fopen (_nombreArchivo.c_str(), "rb");
+
+if (pFile==nullptr){
+
+    return 0;
+}
+
+fseek (pFile, 0, SEEK_END);
+total=ftell (pFile);
+cantidad = total / sizeof(Productos);
+
+fclose (pFile);
+
+return cantidad;
+
+
+}

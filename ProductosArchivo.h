@@ -7,12 +7,14 @@ class ProductosArchivo {
 
 
  private:
-     std:string _nombreArchivo;
+     std::string _nombreArchivo;
 
  public:
     ProductosArchivo();
     ProductosArchivo(std::string nombreArchivo);
     bool guardar (Productos prod);
+    int cantidadTotalProductos ();
+
 
 
 
