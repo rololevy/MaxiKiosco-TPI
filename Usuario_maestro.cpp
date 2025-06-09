@@ -38,6 +38,8 @@ cin>> stock;
 cout<<"Ingresar OK?"<< endl;
 cin>>estado;
 
+prod= Productos (IDProducto, nombreProducto, tipoProducto, precioUnitario, stock, estado);
+
 
 }
 
@@ -68,7 +70,6 @@ getline(cin,Direccion);
 
 cout<<"Ingresar OK=1, NO=0"<< endl;
 cin>>estado;
-
 
 
 
