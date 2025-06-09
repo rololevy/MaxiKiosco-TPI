@@ -14,15 +14,15 @@ private:
 public:
     Producto ();
     Producto(std::string IDProducto, std::string nombreProducto, std::string tipoProducto, float precio, int stock, bool estado);
-    
-    int getIDProducto();
+
+    std::string getIDProducto();
     std::string getnombreProducto();
     std::string gettipoProducto();
     float getprecioUnitario();
     int getstock();
     bool getEstado();
 
-    void setIDProducto(int ID);
+    void setIDProducto(std::string ID);
     void setnombreProducto(std::string nombre);
     void settipoProducto(std::string tipo);
     void setprecioUnitario(float precio);

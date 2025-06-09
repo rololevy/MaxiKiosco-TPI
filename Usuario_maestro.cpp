@@ -3,10 +3,12 @@
 using namespace std;
 #include "Usuario_maestro.h"
 #include "Productos.h"
+#include "ProductosArchivo.h"
 
 void Usuario_maestro::cargarProducto (){
 
     Productos prod;
+    ProductosArchivo registro;
 
 string IDProducto, nombreProducto, tipoProducto;
 float precioUnitario;
@@ -35,11 +37,17 @@ cin>> precioUnitario;
 cout<<"Ingrese stock"<< endl;
 cin>> stock;
 
-cout<<"Ingresar OK?"<< endl;
+cout<<"Ingresar 1-si 2-no?"<< endl;
 cin>>estado;
 
 prod= Productos (IDProducto, nombreProducto, tipoProducto, precioUnitario, stock, estado);
 
+if (registro.guardar(prod)){
+
+    cout<< "Se guardo correctamente!";
+}
+else
+    cout<<"Hubo un error al realizar la carga";
 
 }
 

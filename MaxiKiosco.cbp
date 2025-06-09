@@ -34,6 +34,8 @@
 		</Compiler>
 		<Unit filename="Productos.cpp" />
 		<Unit filename="Productos.h" />
+		<Unit filename="ProductosArchivo.cpp" />
+		<Unit filename="ProductosArchivo.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

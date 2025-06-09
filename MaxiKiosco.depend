@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1749430914 source:d:\progra2\git\maxikiosco-tpi\main.cpp
+	<iostream>
+	<ctime>
+
+1749475118 source:d:\progra2\git\maxikiosco-tpi\productos.cpp
+	<cstring>
+	"Productos.h"
+
+1749475210 d:\progra2\git\maxikiosco-tpi\productos.h
+	<string>
+

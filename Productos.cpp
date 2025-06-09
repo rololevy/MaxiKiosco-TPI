@@ -1,4 +1,4 @@
-#include <iostream>
+#pragma once
 #include <cstring>
 #include "Productos.h"
 
@@ -12,7 +12,7 @@ strcpy (_tipoProducto, "");
  _stock=0;
  _estado=false;
 
- 
+
 };
  Productos::Producto(std::string IDProducto, std::string nombreProducto, std::string tipoProducto, float precio, int stock, bool estado){
 strcpy(_IDProducto, IDProducto.c_str());
@@ -23,10 +23,11 @@ strcpy (_tipoProducto, tipoProducto.c_str());
  _estado= estado;
 
 
-     
+
  };
 
 std::string Productos::getIDProducto() {
+
     return _IDProducto;
 }
 
@@ -58,7 +59,7 @@ void Productos::setnombreProducto(std::string nombre) {
 }
 
 void Productos::settipoProducto(std::string tipo) {
-    strcpy (_tipo, tipo.c_str());
+    strcpy (_tipoProducto, tipo.c_str());
 }
 
 void Productos::setprecioUnitario(float precio) {
@@ -83,7 +84,7 @@ void Productos::cargar() {
     cin >> id;
     setIDProducto(id);
 
-    cin.ignore(); 
+    cin.ignore();
 
     cout << "Ingrese nombre del producto: ";
     getline(cin, nombre);
@@ -119,5 +120,5 @@ void Productos::mostrar() {
 void Productos::eliminar() {
     _estado = false;
 }
-*/ 
+*/
 ///ESTO LO HACE EL MANAGER
