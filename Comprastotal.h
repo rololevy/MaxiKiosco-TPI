@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 class Comprastotal {
 private:
@@ -8,15 +9,19 @@ private:
     float importe;
 
 public:
-    // Getters
-    const char* getIDProducto() const;
-    const char* getIDCompra() const;
-    int getCantidad() const;
-    float getImporte() const;
+    Comprastotal();  // Constructor por defecto
+    Comprastotal(std::string idProd, std::string idComp, int cant, float imp); // Constructor con parámetros
 
-    // Setters
-    void setIDProducto(const char* nuevoIDProducto);
-    void setIDCompra(const char* nuevoIDCompra);
-    void setCantidad(int nuevaCantidad);
-    void setImporte(float nuevoImporte);
+    std::string getIDProducto();
+    std::string getIDCompra();
+    int getCantidad();
+    float getImporte();
+
+    void setIDProducto(std::string idProd);
+    void setIDCompra(std::string idComp);
+    void setCantidad(int cant);
+    void setImporte(float imp);
+
+    void cargar();
+    void mostrar();
 };
