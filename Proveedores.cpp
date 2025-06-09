@@ -51,7 +51,7 @@ _email=Email;
 void Proveedores::setDireccion(const std::string& Direccion){
 _direccion=Direccion;
 }
-
+/*
 void Proveedores::Cargar(){
 string idProv, CUIT, Nombre, Telefono, Email, Direccion;
 
@@ -138,3 +138,4 @@ case 3:
 
 }
 }
+*/
