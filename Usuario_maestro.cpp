@@ -89,5 +89,13 @@ void listarProductos(){
  Productos registro;
  int cantidadRegistros;
 
+  cantidadRegistros= pProductos.cantidadTotalProductos();
+
+  for ( int i=0; i< cantidadRegistros; i++){
+
+    registro = pProductos.leer(i);
+
+  }
+
 
 }

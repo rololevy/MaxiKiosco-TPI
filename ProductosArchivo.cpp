@@ -9,7 +9,7 @@ _nombreArchivo=nombreArchivo;
 
 }
 
-bool ProductosArchivo::guardar (Productos registro){
+bool ProductosArchivo::Guardar (Productos registro){
  bool seguardo;
  FILE *pFile;
 
@@ -49,3 +49,39 @@ return cantidad;
 
 
 }
+
+Productos ProductosArchivo::leer(int pos){
+
+FILE *pFile;
+
+ Productos reg;
+
+ pFile= fopen (_nombreArchivo.c_str(), "rb");
+
+ if (pFile == nullptr){
+
+    return reg;
+ }
+ fseek (pFile, sizeof (Productos)*pos, SEEK_SET);
+
+ fread(&reg, sizeof(Productos), 1 , pFile);
+
+ fclose(pFile);
+ return reg;
+
+}
+
+ bool ProductosArchivo::Modificar (Productos mod, int pos){
+ FILE *pFile = fopen(_nombreArchivo.c_str(),"rb+");
+ if(pFile==NULL){
+    return false;
+ }
+ fseek(pFile,sizeof(ProductosArchivo)* pos,SEEK_SET);
+ bool Modif = fwrite(&mod,sizeof(ProductosArchivo),1,pFile);
+ fclose(pFile);
+ return Modif;
+
+
+ }
+
+ /// bool ProductosArchivo::Eliminar (Productos mod, int pos){}
