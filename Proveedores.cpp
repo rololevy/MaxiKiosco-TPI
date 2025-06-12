@@ -1,80 +1,81 @@
 #include <iostream>
+#include <cstring>
 #include "Proveedores.h"
 
 using namespace std;
 
 
-std::string Proveedores::getidProveedor() const{
+int Proveedores::getidProveedor() const{
 return _idProveedor;
 }
 
-std::string Proveedores::getCUIT() const{
+const char* Proveedores::getCUIT() const{
 return _CUIT;
 }
 
-std::string Proveedores::getNombre() const{
+const char* Proveedores::getNombre() const{
 return _Nombre;
 }
 
-std::string Proveedores::getTelefono() const{
+const char* Proveedores::getTelefono() const{
 return _Telefono;
 }
 
-std::string Proveedores::getemail() const{
+const char* Proveedores::getemail() const{
 return _email;
 }
 
-std::string Proveedores::getDireccion() const{
+const char* Proveedores::getDireccion() const{
 return _direccion;
 }
 
-void Proveedores::setidProveedor(const std::string& Proveedor){
+void Proveedores::setidProveedor(const int Proveedor){
 _idProveedor=Proveedor;
 }
 
-void Proveedores::setCUIT(const std::string& CUIT){
-_CUIT=CUIT;
+void Proveedores::setCUIT(const char* CUIT){
+strcpy(_CUIT, CUIT);
 }
 
-void Proveedores::setNombre(const std::string& Nombre){
-_Nombre=Nombre;
+void Proveedores::setNombre(const char* Nombre){
+strcpy(_Nombre, Nombre);
 }
 
-void Proveedores::setTelefono(const std::string& Telefono){
-_Telefono=Telefono;
+void Proveedores::setTelefono(const char* Telefono){
+strcpy(_Telefono, Telefono);
 }
 
-void Proveedores::setEmail(const std::string& Email){
-_email=Email;
+void Proveedores::setEmail(const char* Email){
+strcpy(_email, Email);
 }
 
-void Proveedores::setDireccion(const std::string& Direccion){
-_direccion=Direccion;
+void Proveedores::setDireccion(const char* Direccion){
+strcpy(_direccion, Direccion);
 }
 
 void Proveedores::Cargar(){
-string idProv, CUIT, Nombre, Telefono, Email, Direccion;
-
-
+string CUIT_str, Nombre_str, Telefono_str, Email_str, Direccion_str;
+int idProv;
 
 cout << "Carga de IDProveedor" << endl;
-getline(cin,idProv);
+cin >> idProv;
 setidProveedor(idProv);
+cin.ignore();
 cout << "Carga de CUIT" << endl;
-getline(cin,CUIT);
-setCUIT(CUIT);
+getline(cin,CUIT_str);
+setCUIT(CUIT_str.c_str());
 cout << "Carga de Nombre" << endl;
-getline(cin,Nombre);
-setNombre(Nombre);
+getline(cin,Nombre_str);
+setNombre(Nombre_str.c_str());
 cout << "Carga de Telefono" << endl;
-getline(cin,Telefono);
-setTelefono(Telefono);
+getline(cin,Telefono_str);
+setTelefono(Telefono_str.c_str());
 cout << "Carga de Email" << endl;
-getline(cin,Email);
-setEmail(Email);
+getline(cin,Email_str);
+setEmail(Email_str.c_str());
 cout << "Carga de Direccion" << endl;
-getline(cin,Direccion);
-setDireccion(Direccion);
+getline(cin,Direccion_str);
+setDireccion(Direccion_str.c_str());
 _estado=true;
 
 }
@@ -97,10 +98,8 @@ else{
 
 }
 
-void Proveedores::Eliminar(){
-
-_estado=false;
-
+void Proveedores::setEstado(bool estado){
+_estado=estado;
 }
 
 void Proveedores::Opcmenu(){
@@ -124,7 +123,7 @@ case 2:
     break;
 
 case 3:
-    Eliminar();
+   // Eliminar();
     break;
 
  case 4:
