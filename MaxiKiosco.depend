@@ -1,12 +1,30 @@
 # depslib dependency file v1.0
-1749430914 source:d:\progra2\git\maxikiosco-tpi\main.cpp
+1749649926 source:d:\progra2\git\maxikiosco-tpi\main.cpp
 	<iostream>
-	<ctime>
+	"MenuPrincipal.h"
 
 1749475118 source:d:\progra2\git\maxikiosco-tpi\productos.cpp
 	<cstring>
 	"Productos.h"
 
 1749475210 d:\progra2\git\maxikiosco-tpi\productos.h
+	<string>
+
+1749430914 d:\progra2\git\maxikiosco-tpi\menuprincipal.h
+
+1749649926 source:d:\progra2\git\maxikiosco-tpi\menuprincipal.cpp
+	<iostream>
+	"MenuPrincipal.h"
+	"Usuario_maestro.h"
+
+1749510742 d:\progra2\git\maxikiosco-tpi\usuario_maestro.h
+
+1749650140 source:d:\progra2\git\maxikiosco-tpi\productosarchivo.cpp
+	"ProductosArchivo.h"
+	"Productos.h"
+	<iostream>
+
+1749650140 d:\progra2\git\maxikiosco-tpi\productosarchivo.h
+	"Productos.h"
 	<string>
 

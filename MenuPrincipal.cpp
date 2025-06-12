@@ -5,7 +5,7 @@ using namespace std;
 
 
 void MenuPrincipal::mostrar(){
- srand(time(0));
+ ///srand(time(0));
     int opcion;
     Usuario_maestro cargas;
 

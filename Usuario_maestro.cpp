@@ -54,7 +54,7 @@ else
 void Usuario_maestro::cargarProveedor(){
 
 string idProv, CUIT, Nombre, Telefono, Email, Direccion;
-
+int estado;
 
 
 cout << "Carga de IDProveedor" << endl;
@@ -83,7 +83,7 @@ cin>>estado;
 
 }
 
-void listarProductos(){
+/*void listarProductos(){
 
  ProductosArchivo pProductos;
  Productos registro;
@@ -98,4 +98,4 @@ void listarProductos(){
   }
 
 
-}
+}*/

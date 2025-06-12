@@ -1,7 +1,10 @@
 #include "ProductosArchivo.h"
+#include "Productos.h"
+#include <iostream>
+using namespace std;
 
 ProductosArchivo::ProductosArchivo(){
- _nombreArchivo="ProductosArchivo.dat"
+ _nombreArchivo="ProductosArchivo.dat";
 }
 
 ProductosArchivo::ProductosArchivo(std::string nombreArchivo){
@@ -97,8 +100,8 @@ int ProductosArchivo::buscarProducto(std::string IDProducto){
 
  }
 
- bool ProductosArchivo::Modificar (Productos mod, int pos){
- Productos mod;
+ /*bool ProductosArchivo::Modificar (Productos mod, int pos){
+ Productos mode;
 
  FILE *pFile = fopen(_nombreArchivo.c_str(),"rb+");
 
@@ -112,9 +115,9 @@ int ProductosArchivo::buscarProducto(std::string IDProducto){
  return Modif;
 
 
- }
+ }*/
 
- bool ProductosArchivo::Eliminar(std::string IDProducto){
+/* bool ProductosArchivo::Eliminar(std::string IDProducto){
     Productos reg;
     ProductosArchivo archi;
     int pos=archi.buscarProducto(IDProducto);
@@ -125,4 +128,4 @@ int ProductosArchivo::buscarProducto(std::string IDProducto){
     reg.setEstado(false);
 
     return archi.Modificar (reg, pos);
-}
+}*/
