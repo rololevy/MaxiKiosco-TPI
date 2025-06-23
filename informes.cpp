@@ -160,16 +160,19 @@ void informes::Listardatos(){
         cin >> opcion;
         system("cls");
         switch (opcion) {
+
             case 1:{
             int Cantreg= ArchProductos.cantidadTotalProductos();   /// cuento y guardo cantidad de registros
 
             if(Cantreg==0){
             cout << "No hay productos registrados" << endl;
             }
-            int RegistroProductos=ArchProductos.listarTodos();       ///muestra los archivos activos(true)
+
+            ArchProductos.listarTodos();       ///muestra los archivos activos(true)
                 system("pause");
 
                 break;}
+
             case 2:{
                 int Cantreg= Arch.getCantidadRegistros();
 
@@ -178,10 +181,12 @@ void informes::Listardatos(){
 
                 }
 
-                int registrosCargados=Arch.listarTodos();
+
+                Arch.listarTodos();
 
                 system("pause");
                 break;}
+
             case 3:{
                 int Cantreg= ArchivoCompras.getCantidadRegistros();
 
@@ -190,7 +195,8 @@ void informes::Listardatos(){
 
                 }
 
-                int registrosCargados=ArchivoCompras.listarTodos();
+
+                ArchivoCompras.listarTodos();
 
                 system("pause");
                 break;}
