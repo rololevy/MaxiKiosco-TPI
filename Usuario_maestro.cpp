@@ -9,9 +9,9 @@ using namespace std;
 #include "ComprasArchivo.h"
 #include "Fecha.h"
 
-void Usuario_maestro::cargarProducto (){
+void Manager::cargarProducto (){
 
-    Productos prod;
+    Productos prodCarga;
     ProductosArchivo registro;
 
 string IDProducto, nombreProducto, tipoProducto;
@@ -22,9 +22,9 @@ bool estado;
 ////aca se valida
 
 
-cout <<"Ingrese ID Producto";
-cin.ignore();
-getline(cin, IDProducto);
+ cout <<"Ingrese ID Producto"<<endl;
+ cin.ignore();
+ getline(cin, IDProducto);
 
 cout << "Ingrese Nombre Producto"<< endl;
 getline(cin, nombreProducto);
@@ -38,21 +38,275 @@ cin>> precioUnitario;
 cout<<"Ingrese stock"<< endl;
 cin>> stock;
 
-cout<<"Ingresar 1-si 2-no?"<< endl;
-cin>>estado;
 
-prod= Productos (IDProducto, nombreProducto, tipoProducto, precioUnitario, stock, estado);
 
-if (registro.Guardar(prod)){
 
-    cout<< "Se guardo correctamente!";
+prodCarga= Productos(IDProducto, nombreProducto, tipoProducto, precioUnitario, stock);
+
+
+if (registro.Guardar(prodCarga)){
+
+    cout<< "Se guardo correctamente!"<<endl;
 }
-else
-    cout<<"Hubo un error al realizar la carga";
+else{
+    cout<<"Hubo un error al realizar la carga"<<endl;
+
+}
+}
+
+void Manager::listarProductos(){
+Manager mostrarEnLista;
+ ProductosArchivo pProductos;
+ Productos registro;
+
+ int cantidadRegistros;
+
+  cantidadRegistros= pProductos.cantidadTotalProductos();
+if (cantidadRegistros>0){
+    for ( int i=0; i< cantidadRegistros; i++){
+
+    registro=pProductos.leer(i);
+
+    mostrarEnLista.mostrarProductosActivos(registro);
+
+
+  }
+
+
+}
+ else {
+        cout<<"No hay registros para mostrar..."<<endl;
+    }
+
+}
+
+void Manager::mostrarProductosActivos(Productos registro){
+bool reg=registro.getEstado();
+
+if(reg){
+cout<<"**************************************************"<<endl;
+cout << "ID Producto : " <<registro.getIDProducto() << endl;
+cout << "Nombre Producto : " << registro.getnombreProducto() << endl;
+cout << "Tipo Producto : " << registro.gettipoProducto() << endl;
+cout << "Precio Unitario $: " << registro.getprecioUnitario() << endl;
+cout << "Stock : " << registro.getstock()<< endl;
+cout<<"**************************************************"<<endl;
+}
+else {
+    cout<<"No hay registros activos para mostrar..."<<endl;
+}
+
+}
+
+void Manager::eliminarProducto (){
+
+    Manager cargas;
+    ProductosArchivo registro;
+    Productos setter;
+
+    string idProducto;
+
+
+ int posicion1;
+cout<<"Ingrese ID Producto a eliminar :"<<endl;
+    cin.ignore();
+    getline(cin, idProducto);
+    posicion1=registro.buscarProducto(idProducto);
+
+    if (posicion1>=0){
+        setter.setEstado(false);
+        if (registro.Guardar(setter, posicion1)){
+            cout<<"Registro eliminado correctamente..."<<endl;
+        }
+        else{
+            cout<<"Hubo un error al eliminar el registro..."<<endl;
+        }
+    }
+    else {
+        cout<<"No existe el ID buscado... vuelva prontos"<<endl;
+    }
+    }
+
+
+void Manager::modificarProducto (){
+
+    ProductosArchivo registro;
+
+   string idProducto, nombreProducto, tipoProducto;
+    float precioUnitario;
+    int stock;
+
+
+
+int Opcion;
+
+ do{
+  cout<<"---------------------------------------------------"<<endl;
+        cout << "      Que registro desea modificar     "<<endl;
+        cout << "1. ID Producto"<<endl;
+        cout << "2. Nombre Producto"<<endl;
+        cout << "3. Tipo Producto"<<endl;
+        cout << "4. Precio unitario"<<endl;
+        cout << "5. Stock"<<endl;
+        cout << "0. Salir" << endl;
+        cout << "Elija una opci¢n:  ";
+  cin >> Opcion;
+
+      switch(Opcion){
+   case 1:
+        int posicion;
+cout<<"Ingrese ID Producto a modificar :"<<endl;
+    cin.ignore();
+    getline(cin, idProducto);
+    posicion=registro.buscarProducto(idProducto);
+
+    if (posicion>=0){
+            Productos setter= registro.leer(posicion);
+            cout<<"Ingrese el nuevo ID :"<<endl;
+            getline(cin, idProducto);
+            setter.setIDProducto(idProducto);
+
+        if (registro.Guardar(setter, posicion)){
+            cout<<"Registro modificado correctamente..."<<endl;
+        }
+        else{
+            cout<<"Hubo un error al modificar el registro..."<<endl;
+        }
+
+}
+    else {
+        cout<<"No existe el ID buscado..."<<endl;
+    }
+
+
+
+    break;
+
+   case 2:
+
+         int posicion2;
+cout<<"Ingrese ID Producto a modificar :"<<endl;
+    cin.ignore();
+    getline(cin, idProducto);
+    posicion2=registro.buscarProducto(idProducto);
+
+    if (posicion2>=0){
+            Productos setter= registro.leer(posicion2);
+            cout<<"Ingrese el nuevo nombre :"<<endl;
+            getline(cin, nombreProducto);
+            setter.setnombreProducto(nombreProducto);
+
+        if (registro.Guardar(setter, posicion2)){
+            cout<<"Registro modificado correctamente..."<<endl;
+        }
+        else{
+            cout<<"Hubo un error al modificar el registro..."<<endl;
+        }
+
+}
+    else {
+        cout<<"No existe el ID buscado..."<<endl;
+    }
+
+
+
+    break;
+
+   case 3:
+        int posicion3;
+cout<<"Ingrese ID Producto a modificar :"<<endl;
+    cin.ignore();
+    getline(cin, idProducto);
+    posicion3=registro.buscarProducto(idProducto);
+
+    if (posicion3>=0){
+            Productos setter= registro.leer(posicion3);
+            cout<<"Ingrese el nuevo tipo de producto :"<<endl;
+            getline(cin, tipoProducto);
+            setter.settipoProducto(tipoProducto);
+
+        if (registro.Guardar(setter, posicion)){
+            cout<<"Registro modificado correctamente..."<<endl;
+        }
+        else{
+            cout<<"Hubo un error al modificar el registro..."<<endl;
+        }
+
+}
+    else {
+        cout<<"No existe el ID buscado..."<<endl;
+    }
+
+
+    break;
+
+   case 4:
+        int posicion4;
+cout<<"Ingrese ID Producto a modificar :"<<endl;
+    cin.ignore();
+    getline(cin, idProducto);
+    posicion4=registro.buscarProducto(idProducto);
+
+    if (posicion4>=0){
+            Productos setter= registro.leer(posicion4);
+            cout<<"Ingrese el nuevo precio unitario :"<<endl;
+            cin>>precioUnitario;
+            setter.setprecioUnitario(precioUnitario);
+
+        if (registro.Guardar(setter, posicion4)){
+            cout<<"Registro modificado correctamente..."<<endl;
+        }
+        else{
+            cout<<"Hubo un error al modificar el registro..."<<endl;
+        }
+    }
+    else {
+        cout<<"No existe el ID buscado..."<<endl;
+    }
+
+
+    break;
+
+   case 5:
+         int posicion5;
+cout<<"Ingrese ID Producto a modificar :"<<endl;
+    cin.ignore();
+    getline(cin, idProducto);
+    posicion5=registro.buscarProducto(idProducto);
+
+    if (posicion5>=0){
+            Productos setter= registro.leer(posicion5);
+            cout<<"Ingrese el nuevo Stock del producto :"<<endl;
+            cin>>stock;
+            setter.setstock(stock);
+
+        if (registro.Guardar(setter, posicion5)){
+            cout<<"Registro modificado correctamente..."<<endl;
+        }
+        else{
+            cout<<"Hubo un error al modificar el registro..."<<endl;
+        }
+    }
+    else {
+        cout<<"No existe el ID buscado..."<<endl;
+    }
+
+
+    break;
+
+    default:
+        cout << "Elija una opcion valida:" << endl;
+
+
+}
+
+}while (Opcion != 0);
 
 }
 
 
+
+///********************************************************************************************************************************************************
 
 void Usuario_maestro::cargarProveedor(){
     Proveedores proveedor;

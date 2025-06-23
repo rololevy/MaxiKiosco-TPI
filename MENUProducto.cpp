@@ -30,11 +30,11 @@ int Opcion;
     break;
 
    case 3:
-       cargas.eliminarRegistro();
+       cargas.eliminarProducto();
     break;
 
    case 4:
-       cargas.modificarRegistro();
+       cargas.modificarProducto();
     break;
 
    case 5:
