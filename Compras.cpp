@@ -1,7 +1,7 @@
-#include "Compras.h"
 #include <cstring>
 #include <iostream>
 using namespace std;
+#include "Compras.h"
 
 // Constructor por defecto
 Compras::Compras() {
@@ -11,24 +11,32 @@ Compras::Compras() {
     activo = true;
 }
 
+Compras::Compras(std::string IDcompra,std::string idPROV,Fecha fecha,float Importe, int estado){
+    strcpy (idCompra, IDcompra.c_str());
+    strcpy (idProveedor, idPROV.c_str());
+    _fecha= fecha;
+    importe=Importe;
+    activo=estado;
+ }
+
 // Getters
-const char* Compras::getIdProveedor() const {
+const char* Compras::getIdProveedor() {
     return idProveedor;
 }
 
-const char* Compras::getIdCompra() const {
+const char* Compras::getIdCompra() {
     return idCompra;
 }
 
-Fecha Compras::getFecha() const {
-    return fecha;
+Fecha Compras::getFecha(){
+    return _fecha;
 }
 
-float Compras::getImporte() const {
+float Compras::getImporte() {
     return importe;
 }
 
-bool Compras::getActivo() const {
+bool Compras::getActivo(){
     return activo;
 }
 
@@ -42,7 +50,7 @@ void Compras::setIdCompra(const char* id) {
 }
 
 void Compras::setFecha(const Fecha& nuevaFecha) {
-    fecha = nuevaFecha;
+    _fecha = nuevaFecha;
 }
 
 void Compras::setImporte(float nuevoImporte) {
@@ -54,15 +62,16 @@ void Compras::setActivo(bool estado) {
 }
 
 // Mostrar datos
-void Compras::mostrar() const {
+void Compras::mostrar() {
     cout << "ID Compra: " << idCompra << endl;
     cout << "ID Proveedor: " << idProveedor << endl;
     cout << "Fecha: ";
-    fecha.mostrar(); // asumimos que Fecha tiene un método mostrar()
+    _fecha.Mostrar();
+    cout << endl;
     cout << "Importe: $" << importe << endl;
     cout << "Activo: ";
         if (activo) {
-            cout << "Sí";
+            cout << "Si";
         } else {
             cout << "No";
         }

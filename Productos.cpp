@@ -1,10 +1,10 @@
-#pragma once
 #include <cstring>
+#include <iostream>
+using namespace std;
 #include "Productos.h"
 
-using namespace std;
 
-Productos::Producto(){
+Productos::Productos(){
 strcpy(_IDProducto, "");
 strcpy (_nombreProducto, "");
 strcpy (_tipoProducto, "");
@@ -14,7 +14,7 @@ strcpy (_tipoProducto, "");
 
 
 };
- Productos::Producto(std::string IDProducto, std::string nombreProducto, std::string tipoProducto, float precio, int stock, bool estado){
+ Productos::Productos(std::string IDProducto, std::string nombreProducto, std::string tipoProducto, float precio, int stock, bool estado){
 strcpy(_IDProducto, IDProducto.c_str());
 strcpy (_nombreProducto, nombreProducto.c_str());
 strcpy (_tipoProducto, tipoProducto.c_str());
@@ -74,8 +74,8 @@ void Productos::setEstado (bool estado){
 
  _estado= estado;
 }
-/*
-void Productos::cargar() {
+
+/*void Productos::cargar() {
     string nombre, tipo;
     float precio;
     int stock, id;
@@ -103,7 +103,7 @@ void Productos::cargar() {
     setstock(stock);
 
     _estado = true;
-}
+}*/
 
 void Productos::mostrar() {
     if (_estado) {
@@ -120,5 +120,5 @@ void Productos::mostrar() {
 void Productos::eliminar() {
     _estado = false;
 }
-*/
+
 ///ESTO LO HACE EL MANAGER

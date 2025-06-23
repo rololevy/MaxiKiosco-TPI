@@ -1,5 +1,5 @@
 #pragma once
-#include "Proveedores.cpp"
+#include "Proveedores.h"
 
 class ProveedorArchivo{
 private:
@@ -13,8 +13,9 @@ public:
     bool Guardar(Proveedores maxi);
     bool Modificar(Proveedores maxi, int pos);
     bool Eliminar(Proveedores maxi,int pos);
-    void listarTodos();
+    //int listarTodos(Proveedores *vector, int cantRegistros);
     int getCantidadRegistros();
+    int listarTodos();
 
     void setregActivo(bool estado);
     bool getregActivo();

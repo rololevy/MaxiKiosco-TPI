@@ -1,31 +1,53 @@
 #include <iostream>
 #include <cstring>
+using namespace std;
 #include "Proveedores.h"
 
-using namespace std;
+Proveedores::Proveedores(){
+_idProveedor=0;
+strcpy (_CUIT, "");
+strcpy (_Nombre, "");
+strcpy (_Telefono, "");
+strcpy (_email, "");
+strcpy (_direccion, "");
+ _estado=false;
+
+}
+
+Proveedores::Proveedores(int idProveedor, std::string CUIT, std::string Nombre, std::string Telefono, std::string Email, std::string Direccion, bool estado){
+_idProveedor=idProveedor;
+strcpy (_CUIT, CUIT.c_str());
+strcpy (_Nombre, Nombre.c_str());
+strcpy (_Telefono, Telefono.c_str());
+strcpy (_email, Email.c_str());
+strcpy (_direccion, Direccion.c_str());
+ _estado= estado;
 
 
-int Proveedores::getidProveedor() const{
+}
+
+
+int Proveedores::getidProveedor(){
 return _idProveedor;
 }
 
-const char* Proveedores::getCUIT() const{
+const char* Proveedores::getCUIT(){
 return _CUIT;
 }
 
-const char* Proveedores::getNombre() const{
+const char* Proveedores::getNombre(){
 return _Nombre;
 }
 
-const char* Proveedores::getTelefono() const{
+const char* Proveedores::getTelefono(){
 return _Telefono;
 }
 
-const char* Proveedores::getemail() const{
+const char* Proveedores::getemail(){
 return _email;
 }
 
-const char* Proveedores::getDireccion() const{
+const char* Proveedores::getDireccion(){
 return _direccion;
 }
 
@@ -52,7 +74,7 @@ strcpy(_email, Email);
 void Proveedores::setDireccion(const char* Direccion){
 strcpy(_direccion, Direccion);
 }
-
+/*  -----------------------------------------------------------> POSIBLEMENTE BORRAR POR MANAGER
 void Proveedores::Cargar(){
 string CUIT_str, Nombre_str, Telefono_str, Email_str, Direccion_str;
 int idProv;
@@ -79,7 +101,7 @@ setDireccion(Direccion_str.c_str());
 _estado=true;
 
 }
-
+*/
 
 void Proveedores::Mostrar(){
 
@@ -102,6 +124,11 @@ void Proveedores::setEstado(bool estado){
 _estado=estado;
 }
 
+bool Proveedores::getEstado(){
+return _estado;
+}
+
+
 void Proveedores::Opcmenu(){
 int Opcs;
 bool Salida=true;
@@ -115,7 +142,7 @@ cin >> Opcs;
 cin.ignore();
 switch(Opcs){
 case 1:
-   Cargar();
+  // Cargar();
     break;
 
 case 2:

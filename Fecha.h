@@ -23,6 +23,7 @@ class Fecha{
 
     void Cargar();
     void Mostrar();
+    std::string toString(); /// agrego para Usuario_maestro.cpp
 
     bool esBisiesto(int anio);
     bool validarFecha(int dia, int mes, int anio);

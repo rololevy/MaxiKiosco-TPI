@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "Compras.h" 
+#include "Compras.h"
 
 class ComprasArchivo {
 private:
@@ -8,10 +8,12 @@ private:
 
 public:
     ComprasArchivo(std::string nombreArchivo);
+
+    ComprasArchivo();
     Compras leerUno(int pos);
     bool guardar(Compras maxi);
     bool modificar(Compras maxi, int pos);
     bool eliminar(Compras maxi, int pos);
-    void listarTodos();
+    int listarTodos();
     int getCantidadRegistros();
 };

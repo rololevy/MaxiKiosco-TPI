@@ -16,12 +16,14 @@ private:
 
 public:
 
-int getidProveedor() const;
-const char* getCUIT() const;
-const char* getNombre() const;
-const char* getTelefono() const;
-const char* getemail() const;
-const char* getDireccion() const;
+Proveedores();
+Proveedores(int idProveedor, std::string CUIT, std::string Nombre, std::string Telefono, std::string Email, std::string Direccion, bool estado);
+int getidProveedor();
+const char* getCUIT();
+const char* getNombre();
+const char* getTelefono();
+const char* getemail();
+const char* getDireccion();
 void setidProveedor(const int Proveedor);
 void setCUIT(const char* CUIT);
 void setNombre(const char* Nombre);
@@ -31,6 +33,7 @@ void setDireccion(const char* Direccion);
 void Cargar();
 void Mostrar();
 void setEstado(bool estado);
+bool getEstado();
 void Opcmenu();
 
 };

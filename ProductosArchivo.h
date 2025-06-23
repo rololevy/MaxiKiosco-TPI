@@ -15,13 +15,9 @@ class ProductosArchivo {
     bool Guardar (Productos prod);
     bool Modificar (Productos mod, int pos);
     bool Eliminar ();
-    int cantidadTotalProductos ();
+    int cantidadTotalProductos();
     int buscarProducto(std::string IDProducto);
     Productos leer( int pos);
-
-
-
-
-
+    int listarTodos();
 
 };

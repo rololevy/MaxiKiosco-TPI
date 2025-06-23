@@ -12,8 +12,8 @@ private:
     bool _estado;
 
 public:
-    Producto ();
-    Producto(std::string IDProducto, std::string nombreProducto, std::string tipoProducto, float precio, int stock, bool estado);
+    Productos ();
+    Productos(std::string IDProducto, std::string nombreProducto, std::string tipoProducto, float precio, int stock, bool estado);
 
     std::string getIDProducto();
     std::string getnombreProducto();

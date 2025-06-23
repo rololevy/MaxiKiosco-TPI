@@ -6,20 +6,21 @@ class Compras {
 private:
     char idProveedor[30];
     char idCompra[30];
-    Fecha fecha;
+    Fecha _fecha;
     float importe;
     bool activo;
 
 public:
     // Constructor por defecto
     Compras();
+    Compras(string IDcompra,string idPROV,Fecha fecha,float Importe, int estado);
 
     // Getters
-    const char* getIdProveedor() const;
-    const char* getIdCompra() const;
-    Fecha getFecha() const;
-    float getImporte() const;
-    bool getActivo() const;
+    const char* getIdProveedor();
+    const char* getIdCompra();
+    Fecha getFecha();
+    float getImporte();
+    bool getActivo();
 
     // Setters
     void setIdProveedor(const char* id);
@@ -29,5 +30,5 @@ public:
     void setActivo(bool estado);
 
     // Métodos útiles
-    void mostrar() const;
+    void mostrar();
 };

@@ -1,6 +1,7 @@
 #include <iostream>
-#include "Fecha.h"
 using namespace std;
+#include "Fecha.h"
+
 ///Establecimiento o implementacion de los metodos
 
 ///Constructores
@@ -85,4 +86,8 @@ void Fecha::Cargar() {
 
 void Fecha::Mostrar(){
 cout<<_dia<<"/"<<_mes<<"/"<<_anio;
+}
+
+std::string Fecha::toString(){
+    return std::to_string(_dia) + "/" + std::to_string(_mes) + "/" + std::to_string(_anio);
 }

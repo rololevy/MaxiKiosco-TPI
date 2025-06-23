@@ -1,10 +1,15 @@
-#include "ComprasArchivo.h"
 #include <iostream>
 #include <cstdio>
 using namespace std;
+#include "ComprasArchivo.h"
 
 ComprasArchivo::ComprasArchivo(std::string nombreArchivo) {
     _nombreArchivo = nombreArchivo;
+}
+
+
+ComprasArchivo::ComprasArchivo() {
+    _nombreArchivo = "compras.dat";
 }
 
 Compras ComprasArchivo::leerUno(int pos) {
@@ -48,16 +53,19 @@ bool ComprasArchivo::eliminar(Compras maxi, int pos) {
     return exito;
 }
 
-void ComprasArchivo::listarTodos() {
+int ComprasArchivo::listarTodos() {
     FILE* archivo = fopen(_nombreArchivo.c_str(), "rb");
-    if (archivo == nullptr) return;
+    if (archivo == nullptr) return 0;
+    int Comprascargadas=0;
     Compras maxi;
     while (fread(&maxi, sizeof(Compras), 1, archivo)) {
         if (maxi.getActivo()) {
             maxi.mostrar();  // Suponiendo que tiene un método mostrar()
+            Comprascargadas++;
         }
     }
     fclose(archivo);
+    return Comprascargadas;
 }
 
 int ComprasArchivo::getCantidadRegistros() {

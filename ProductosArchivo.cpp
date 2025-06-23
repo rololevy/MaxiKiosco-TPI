@@ -1,7 +1,7 @@
-#include "ProductosArchivo.h"
-#include "Productos.h"
 #include <iostream>
 using namespace std;
+#include "Productos.h"
+#include "ProductosArchivo.h"
 
 ProductosArchivo::ProductosArchivo(){
  _nombreArchivo="ProductosArchivo.dat";
@@ -129,3 +129,23 @@ int ProductosArchivo::buscarProducto(std::string IDProducto){
 
     return archi.Modificar (reg, pos);
 }*/
+
+int ProductosArchivo::listarTodos() {
+    FILE* archivo = fopen(_nombreArchivo.c_str(), "rb");
+    int TotalActivos=0;
+    if (archivo == nullptr) return 0;
+    Productos maxi;
+    while (fread(&maxi, sizeof(Productos), 1, archivo)) {
+        if (maxi.getEstado()) {
+           cout << "======================================" << endl;
+            maxi.mostrar();
+            TotalActivos++;
+        }
+    }
+    fclose(archivo);
+    return TotalActivos;
+}
+
+
+
+
