@@ -161,12 +161,12 @@ void informes::Listardatos(){
         system("cls");
         switch (opcion) {
             case 1:{
-            int Cantreg= ArchProductos.cantidadTotalProductos();
+            int Cantreg= ArchProductos.cantidadTotalProductos();   /// cuento y guardo cantidad de registros
 
             if(Cantreg==0){
             cout << "No hay productos registrados" << endl;
             }
-            int RegistroProductos=ArchProductos.listarTodos();
+            int RegistroProductos=ArchProductos.listarTodos();       ///muestra los archivos activos(true)
                 system("pause");
 
                 break;}

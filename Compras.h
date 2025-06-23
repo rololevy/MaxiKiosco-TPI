@@ -13,7 +13,7 @@ private:
 public:
     // Constructor por defecto
     Compras();
-    Compras(string IDcompra,string idPROV,Fecha fecha,float Importe, int estado);
+    Compras(string IDcompra,string idPROV,Fecha fecha,float Importe, int estado);   /// para informes
 
     // Getters
     const char* getIdProveedor();

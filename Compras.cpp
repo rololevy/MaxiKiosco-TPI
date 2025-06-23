@@ -11,7 +11,7 @@ Compras::Compras() {
     activo = true;
 }
 
-Compras::Compras(std::string IDcompra,std::string idPROV,Fecha fecha,float Importe, int estado){
+Compras::Compras(std::string IDcompra,std::string idPROV,Fecha fecha,float Importe, int estado){  /// agrego para informes
     strcpy (idCompra, IDcompra.c_str());
     strcpy (idProveedor, idPROV.c_str());
     _fecha= fecha;

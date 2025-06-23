@@ -92,7 +92,7 @@ Estado=true;                        /// -----> revisar
 proveedor= Proveedores (idProv, CUIT_str, Nombre_str, Telefono_str, Email_str, Direccion_str,Estado);
 
 
-if (ArchivodeProveedores.Guardar(proveedor)){
+if (ArchivodeProveedores.Guardar(proveedor)){       /// guardo los datos en Proveedores.dat
 
     cout<< "Se guardo correctamente!";
 }
@@ -145,31 +145,4 @@ else{
 
 }
 
-void listarProductos(){
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*
- ProductosArchivo pProductos;
- Productos registro;
- int cantidadRegistros;
-
-  cantidadRegistros= pProductos.cantidadTotalProductos();
-
-  for ( int i=0; i< cantidadRegistros; i++){
-
-    registro = pProductos.leer(i);
-  }
-*/
-
-}
