@@ -35,13 +35,14 @@ void MenuPrincipal::mostrar(){
                 ;
                 break;
             case 4:
-                inf.mostrarMenu();
+
                 ;
                 break;
             case 5:
                 ;
                 break;
             case 6:
+                inf.mostrarMenu();
                 ;
                 break;
             case 7:
