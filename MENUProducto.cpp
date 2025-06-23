@@ -1,13 +1,13 @@
 #include <iostream>
 using namespace std;
 #include "MENUProducto.h"
-#include "Manager.h"
-#include "Archivo.h"
+#include "Usuario_maestro.h"
+#include "ProductosArchivo.h"
 
 
 
 void MENUProducto::mostrar (){
-    Manager cargas;
+    Usuario_maestro cargas;
 int Opcion;
  do{
   cout<<"---------------------------------------------------"<<endl;
@@ -48,21 +48,3 @@ int Opcion;
 
 }while (Opcion != 0);
 }
-
-
-
- /*posicion2=registro.buscarNombre(nombreProducto);
-                if (posicion2 >=0){
-                    prodCarga2=registro.leer(posicion2);
-                    cout <<"Ingrese Nombre del nuevo Producto";
-                    cin.ignore();
-                    getline(cin, nombreProducto);
-                }
-                prodCarga2.setnombreProducto(nombreProducto);
-                if (registro.Guardar(prodCarga2, posicion2)){
-                    cout<<"Registro moficicado correctamente"<<endl;
-                }
-                else {
-                    cout<<"No se pudo moficar el registro"<<endl;
-                }
-*/

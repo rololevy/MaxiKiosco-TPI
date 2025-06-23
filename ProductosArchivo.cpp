@@ -1,4 +1,4 @@
-#include "Archivo.h"
+#include "ProductosArchivo.h"
 #include "Productos.h"
 #include <iostream>
 using namespace std;

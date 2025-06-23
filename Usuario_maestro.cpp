@@ -9,7 +9,7 @@ using namespace std;
 #include "ComprasArchivo.h"
 #include "Fecha.h"
 
-void Manager::cargarProducto (){
+void Usuario_maestro::cargarProducto (){
 
     Productos prodCarga;
     ProductosArchivo registro;
@@ -54,8 +54,8 @@ else{
 }
 }
 
-void Manager::listarProductos(){
-Manager mostrarEnLista;
+void Usuario_maestro::listarProductos(){
+Usuario_maestro mostrarEnLista;
  ProductosArchivo pProductos;
  Productos registro;
 
@@ -80,7 +80,7 @@ if (cantidadRegistros>0){
 
 }
 
-void Manager::mostrarProductosActivos(Productos registro){
+void Usuario_maestro::mostrarProductosActivos(Productos registro){
 bool reg=registro.getEstado();
 
 if(reg){
@@ -98,9 +98,9 @@ else {
 
 }
 
-void Manager::eliminarProducto (){
+void Usuario_maestro::eliminarProducto (){
 
-    Manager cargas;
+    Usuario_maestro cargas;
     ProductosArchivo registro;
     Productos setter;
 
@@ -128,7 +128,7 @@ cout<<"Ingrese ID Producto a eliminar :"<<endl;
     }
 
 
-void Manager::modificarProducto (){
+void Usuario_maestro::modificarProducto (){
 
     ProductosArchivo registro;
 

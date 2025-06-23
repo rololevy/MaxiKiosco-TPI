@@ -1,4 +1,5 @@
 #pragma once
+#include "Productos.h"
 
 class Usuario_maestro {
 

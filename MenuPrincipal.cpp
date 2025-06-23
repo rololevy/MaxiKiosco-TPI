@@ -1,17 +1,17 @@
 #include <iostream>
 using namespace std;
 #include "MenuPrincipal.h"
-#include "Usuario_maestro.h"
+#include "MENUProducto.h"
 
 
 void MenuPrincipal::mostrar(){
- ///srand(time(0));
+
     int opcion;
-    Usuario_maestro cargas;
+    MENUProducto cargas;
 
     do {
         cout << "\n--- Menu ---" << endl;
-        cout << "1. Cargar Producto" << endl;
+        cout << "1. Productos" << endl;
         cout << "2. Cargar Proveedor" << endl;
         cout << "3. Cargar Compra" << endl;
         cout << "4. Listados" << endl;
@@ -23,7 +23,7 @@ void MenuPrincipal::mostrar(){
 
         switch (opcion) {
             case 1:
-                cargas.cargarProducto();
+                cargas.mostrar();
                 ;
                 break;
             case 2:
