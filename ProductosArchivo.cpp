@@ -1,7 +1,7 @@
+#include "Archivo.h"
+#include "Productos.h"
 #include <iostream>
 using namespace std;
-#include "Productos.h"
-#include "ProductosArchivo.h"
 
 ProductosArchivo::ProductosArchivo(){
  _nombreArchivo="ProductosArchivo.dat";
@@ -11,8 +11,8 @@ ProductosArchivo::ProductosArchivo(std::string nombreArchivo){
 _nombreArchivo=nombreArchivo;
 
 }
-
-bool ProductosArchivo::Guardar (Productos registro){
+///**************************************************************************************************
+bool ProductosArchivo::Guardar (Productos prodP){
  bool seguardo;
  FILE *pFile;
 
@@ -22,12 +22,33 @@ bool ProductosArchivo::Guardar (Productos registro){
     return false;
  }
 
- seguardo =fwrite(&registro, sizeof(Productos), 1, pFile);
+ seguardo =fwrite(&prodP, sizeof(Productos), 1, pFile);
 
  fclose(pFile);
 
  return seguardo;
 }
+
+bool ProductosArchivo::Guardar (Productos prodP, int posicion){
+ bool seguardo;
+ FILE *pFile;
+
+ pFile = fopen (_nombreArchivo.c_str(), "rb+");
+
+ if (pFile== nullptr){
+    return false;
+ }
+
+ fseek (pFile, sizeof(Productos)*posicion, SEEK_SET);
+ seguardo =fwrite(&prodP, sizeof(Productos), 1, pFile);
+
+ fclose(pFile);
+
+ return seguardo;
+
+ }
+
+///**************************************************************************************************
 
 int ProductosArchivo::cantidadTotalProductos (){
 
@@ -43,8 +64,12 @@ if (pFile==nullptr){
 }
 
 fseek (pFile, 0, SEEK_END);
+
 total=ftell (pFile);
-cantidad = total / sizeof(Productos);
+
+tamRegistro= sizeof(Productos);
+
+cantidad = total / tamRegistro;
 
 fclose (pFile);
 
@@ -73,26 +98,25 @@ FILE *pFile;
  return reg;
 
 }
-
+///*************************************************************************************************
 int ProductosArchivo::buscarProducto(std::string IDProducto){
  FILE *pFile;
  Productos prod;
- int pos=0;
  pFile= fopen (_nombreArchivo.c_str() , "rb");
  if (pFile==nullptr){
 
-    cout<<"No se pudo abrir el archivo";
     return -1;
  }
- int i=0;
- while (fread (&prod,sizeof (Productos), 1, pFile)){
+ int posicion=0;
+ while (fread (&prod,sizeof (Productos), 1, pFile)==1){
 
     if (prod.getIDProducto()==IDProducto){
         fclose (pFile);
-        return i;
+        return posicion;
 
     }
-    i++;
+
+    posicion++;
  }
  fclose (pFile);
  return -1;
@@ -100,7 +124,9 @@ int ProductosArchivo::buscarProducto(std::string IDProducto){
 
  }
 
- /*bool ProductosArchivo::Modificar (Productos mod, int pos){
+///********************************************************************************************************************
+/*
+ bool ProductosArchivo::Modificar (Productos mod, int pos){
  Productos mode;
 
  FILE *pFile = fopen(_nombreArchivo.c_str(),"rb+");
@@ -115,9 +141,9 @@ int ProductosArchivo::buscarProducto(std::string IDProducto){
  return Modif;
 
 
- }*/
+ }
 
-/* bool ProductosArchivo::Eliminar(std::string IDProducto){
+bool ProductosArchivo::Eliminar(std::string IDProducto){
     Productos reg;
     ProductosArchivo archi;
     int pos=archi.buscarProducto(IDProducto);
@@ -128,24 +154,7 @@ int ProductosArchivo::buscarProducto(std::string IDProducto){
     reg.setEstado(false);
 
     return archi.Modificar (reg, pos);
-}*/
-
-int ProductosArchivo::listarTodos() {
-    FILE* archivo = fopen(_nombreArchivo.c_str(), "rb");
-    int TotalActivos=0;
-    if (archivo == nullptr) return 0;
-    Productos maxi;
-    while (fread(&maxi, sizeof(Productos), 1, archivo)) {
-        if (maxi.getEstado()) {
-           cout << "======================================" << endl;
-            maxi.mostrar();
-            TotalActivos++;
-        }
-    }
-    fclose(archivo);
-    return TotalActivos;
 }
 
-
-
+*/
 

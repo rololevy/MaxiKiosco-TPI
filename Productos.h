@@ -5,15 +5,15 @@ class Productos {
 
 private:
     char _IDProducto[10];
-    char _nombreProducto[50];
-    char _tipoProducto[30];
+    char _nombreProducto[15];
+    char _tipoProducto[15];
     float _precioUnitario;
     int _stock;
-    bool _estado;
+    bool _estado=true;
 
 public:
     Productos ();
-    Productos(std::string IDProducto, std::string nombreProducto, std::string tipoProducto, float precio, int stock, bool estado);
+    Productos(std::string IDProducto, std::string nombreProducto, std::string tipoProducto, float precio, int stock);
 
     std::string getIDProducto();
     std::string getnombreProducto();
@@ -22,12 +22,13 @@ public:
     int getstock();
     bool getEstado();
 
-    void setIDProducto(std::string ID);
+    void setIDProducto(std::string IDProducto);
     void setnombreProducto(std::string nombre);
     void settipoProducto(std::string tipo);
     void setprecioUnitario(float precio);
     void setstock(int stock);
     void setEstado (bool estado);
+    std::string toCSV();
 
     void cargar();
     void mostrar();

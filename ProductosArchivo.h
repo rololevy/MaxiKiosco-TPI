@@ -12,12 +12,13 @@ class ProductosArchivo {
  public:
     ProductosArchivo();
     ProductosArchivo(std::string nombreArchivo);
-    bool Guardar (Productos prod);
+    bool Guardar (Productos prodP);
+    bool Guardar (Productos prodP, int posicion);
     bool Modificar (Productos mod, int pos);
-    bool Eliminar ();
-    int cantidadTotalProductos();
+    bool Eliminar (std::string IDProducto);
+    int cantidadTotalProductos ();
     int buscarProducto(std::string IDProducto);
-    Productos leer( int pos);
-    int listarTodos();
+    Productos leer(int pos);
+
 
 };
