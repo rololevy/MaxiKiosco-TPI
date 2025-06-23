@@ -123,6 +123,52 @@ int ProductosArchivo::buscarProducto(std::string IDProducto){
 
 
  }
+ ///*************************************************************************************************************************
+ void ProductosArchivo::listarProductos(){
+
+ ProductosArchivo pProductos;
+ Productos registro;
+
+ int cantidadRegistros;
+
+  cantidadRegistros= pProductos.cantidadTotalProductos();
+if (cantidadRegistros>0){
+    for ( int i=0; i< cantidadRegistros; i++){
+
+    registro=pProductos.leer(i);
+
+   pProductos.mostrarProductosActivos(registro);
+
+
+  }
+
+
+}
+ else {
+        cout<<"No hay registros para mostrar..."<<endl;
+    }
+
+}
+
+
+ void ProductosArchivo::mostrarProductosActivos(Productos registro){
+ bool reg=registro.getEstado();
+
+if(reg){
+cout<<"**************************************************"<<endl;
+cout << "ID Producto : " <<registro.getIDProducto() << endl;
+cout << "Nombre Producto : " << registro.getnombreProducto() << endl;
+cout << "Tipo Producto : " << registro.gettipoProducto() << endl;
+cout << "Precio Unitario $: " << registro.getprecioUnitario() << endl;
+cout << "Stock : " << registro.getstock()<< endl;
+cout<<"**************************************************"<<endl;
+}
+else {
+    cout<<"No hay registros activos para mostrar..."<<endl;
+}
+
+
+ }
 
 ///********************************************************************************************************************
 /*

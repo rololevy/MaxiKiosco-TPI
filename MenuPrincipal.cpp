@@ -2,12 +2,14 @@
 using namespace std;
 #include "MenuPrincipal.h"
 #include "MENUProducto.h"
+#include "informes.h"
 
 
 void MenuPrincipal::mostrar(){
 
     int opcion;
     MENUProducto cargas;
+    informes inf;
 
     do {
         cout << "\n--- Menu ---" << endl;
@@ -33,6 +35,7 @@ void MenuPrincipal::mostrar(){
                 ;
                 break;
             case 4:
+                inf.mostrarMenu();
                 ;
                 break;
             case 5:

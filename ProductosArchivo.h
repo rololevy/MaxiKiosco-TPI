@@ -19,6 +19,8 @@ class ProductosArchivo {
     int cantidadTotalProductos ();
     int buscarProducto(std::string IDProducto);
     Productos leer(int pos);
+    void mostrarProductosActivos(Productos registro);
+    void listarProductos();
 
 
 };

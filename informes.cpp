@@ -140,6 +140,7 @@ void informes::comprasPorMes(){
 
 void informes::Listardatos(){
     int opcion;
+
     ProveedorArchivo Arch;
     Proveedores Prov;
 
@@ -168,8 +169,9 @@ void informes::Listardatos(){
             cout << "No hay productos registrados" << endl;
             }
 
-            ArchProductos.listarTodos();       ///muestra los archivos activos(true)
+                ArchProductos.listarProductos();       ///muestra los archivos activos(true)
                 system("pause");
+
 
                 break;}
 

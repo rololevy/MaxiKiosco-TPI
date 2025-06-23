@@ -13,20 +13,21 @@
 
 1749430914 d:\progra2\git\maxikiosco-tpi\menuprincipal.h
 
-1750701685 source:d:\progra2\git\maxikiosco-tpi\menuprincipal.cpp
+1750720097 source:d:\progra2\git\maxikiosco-tpi\menuprincipal.cpp
 	<iostream>
 	"MenuPrincipal.h"
 	"MENUProducto.h"
+	"informes.h"
 
 1750701836 d:\progra2\git\maxikiosco-tpi\usuario_maestro.h
 	"Productos.h"
 
-1750701685 source:d:\progra2\git\maxikiosco-tpi\productosarchivo.cpp
+1750719657 source:d:\progra2\git\maxikiosco-tpi\productosarchivo.cpp
 	"ProductosArchivo.h"
 	"Productos.h"
 	<iostream>
 
-1750700059 d:\progra2\git\maxikiosco-tpi\productosarchivo.h
+1750719657 d:\progra2\git\maxikiosco-tpi\productosarchivo.h
 	"Productos.h"
 	<string>
 
@@ -89,4 +90,25 @@
 	"ProveedorArchivo.h"
 	"ComprasArchivo.h"
 	"Fecha.h"
+
+1750701848 source:d:\progra2\git\maxikiosco-tpi\menuproducto.cpp
+	<iostream>
+	"MENUProducto.h"
+	"Usuario_maestro.h"
+	"ProductosArchivo.h"
+
+1750719980 source:d:\progra2\git\maxikiosco-tpi\informes.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+	<cstdio>
+	<ctime>
+	"informes.h"
+	"Productos.h"
+	"ProductosArchivo.h"
+	"Compras.h"
+	"ComprasArchivo.h"
+	"ProveedorArchivo.h"
+
+1750693741 d:\progra2\git\maxikiosco-tpi\informes.h
 
