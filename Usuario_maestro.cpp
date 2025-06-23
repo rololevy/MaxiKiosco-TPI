@@ -53,7 +53,7 @@ else{
 
 }
 }
-
+/*
 void Usuario_maestro::listarProductos(){
 Usuario_maestro mostrarEnLista;
  ProductosArchivo pProductos;
@@ -97,7 +97,7 @@ else {
 }
 
 }
-
+*/
 void Usuario_maestro::eliminarProducto (){
 
     Usuario_maestro cargas;
