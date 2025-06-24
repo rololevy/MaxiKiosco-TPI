@@ -19,7 +19,7 @@
 	"MENUProducto.h"
 	"informes.h"
 
-1750701836 d:\progra2\git\maxikiosco-tpi\usuario_maestro.h
+1750734462 d:\progra2\git\maxikiosco-tpi\usuario_maestro.h
 	"Productos.h"
 
 1750719657 source:d:\progra2\git\maxikiosco-tpi\productosarchivo.cpp
@@ -80,7 +80,7 @@
 	<cstring>
 	"Proveedores.h"
 
-1750701685 source:d:\progra2\git\maxikiosco-tpi\usuario_maestro.cpp
+1750734409 source:d:\progra2\git\maxikiosco-tpi\usuario_maestro.cpp
 	<iostream>
 	<string>
 	<cstring>

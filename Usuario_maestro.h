@@ -8,10 +8,10 @@ private:
 public:
     ///Productos
     void cargarProducto ();
-    ///void mostrarProductosActivos(Productos registro);
+    void mostrarProductosActivos(Productos registro);
     void eliminarProducto ();
     void modificarProducto ();
-    ///void listarProductos();
+    void listarProductos();
 
     ///Proveedores
     void cargarProveedor ();
