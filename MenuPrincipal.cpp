@@ -4,6 +4,7 @@ using namespace std;
 #include "MENUProducto.h"
 #include "informes.h"
 #include "Consultas.h"
+#include "Usuario_maestro.h"
 
 
 
@@ -13,6 +14,7 @@ void MenuPrincipal::mostrar(){
     MENUProducto cargas;
     informes inf;
     Consultas con;
+    Usuario_maestro a;
 
     do {
         cout << "\n--- Menu ---" << endl;
@@ -32,6 +34,7 @@ void MenuPrincipal::mostrar(){
                 ;
                 break;
             case 2:
+                a.cargarProveedor();
                 ;
                 break;
             case 3:

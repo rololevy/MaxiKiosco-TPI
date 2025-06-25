@@ -13,12 +13,13 @@
 
 1749430914 d:\progra2\git\maxikiosco-tpi\menuprincipal.h
 
-1750880715 source:d:\progra2\git\maxikiosco-tpi\menuprincipal.cpp
+1750882123 source:d:\progra2\git\maxikiosco-tpi\menuprincipal.cpp
 	<iostream>
 	"MenuPrincipal.h"
 	"MENUProducto.h"
 	"informes.h"
 	"Consultas.h"
+	"Usuario_maestro.h"
 
 1750734462 d:\progra2\git\maxikiosco-tpi\usuario_maestro.h
 	"Productos.h"
