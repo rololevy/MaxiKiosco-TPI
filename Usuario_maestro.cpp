@@ -18,15 +18,15 @@ string IDProducto, nombreProducto, tipoProducto;
 float precioUnitario;
 int stock;
 bool estado;
-
+IDProducto=registro.getNuevoID();
 ////aca se valida
 
 
- cout <<"Ingrese ID Producto"<<endl;
- cin.ignore();
- getline(cin, IDProducto);
+cout <<"ID Producto"<<IDProducto<<endl;
+
 
 cout << "Ingrese Nombre Producto"<< endl;
+cin.ignore();
 getline(cin, nombreProducto);
 
 cout <<"Ingrese tipo de producto"<< endl;
@@ -92,9 +92,7 @@ cout << "Precio Unitario $: " << registro.getprecioUnitario() << endl;
 cout << "Stock : " << registro.getstock()<< endl;
 cout<<"**************************************************"<<endl;
 }
-else {
-    cout<<"No hay registros activos para mostrar..."<<endl;
-}
+
 
 }
 

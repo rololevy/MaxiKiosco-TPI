@@ -38,6 +38,8 @@
 		<Unit filename="ComprasArchivo.h" />
 		<Unit filename="Comprastotal.cpp" />
 		<Unit filename="Comprastotal.h" />
+		<Unit filename="Consultas.cpp" />
+		<Unit filename="Consultas.h" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
 		<Unit filename="MENUProducto.cpp" />

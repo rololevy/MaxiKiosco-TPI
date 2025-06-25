@@ -3,6 +3,7 @@ using namespace std;
 #include "MenuPrincipal.h"
 #include "MENUProducto.h"
 #include "informes.h"
+#include "Consultas.h"
 
 
 void MenuPrincipal::mostrar(){
@@ -10,6 +11,7 @@ void MenuPrincipal::mostrar(){
     int opcion;
     MENUProducto cargas;
     informes inf;
+    Consultas con;
 
     do {
         cout << "\n--- Menu ---" << endl;
@@ -39,7 +41,7 @@ void MenuPrincipal::mostrar(){
                 ;
                 break;
             case 5:
-                ;
+                con.menuconsultas();
                 break;
             case 6:
                 inf.mostrarMenu();
