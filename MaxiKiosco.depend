@@ -66,11 +66,11 @@
 
 1749757616 d:\progra2\git\maxikiosco-tpi\menuproducto.h
 
-1750693741 source:d:\progra2\git\maxikiosco-tpi\proveedorarchivo.cpp
+1750881741 source:d:\progra2\git\maxikiosco-tpi\proveedorarchivo.cpp
 	<iostream>
 	"ProveedorArchivo.h"
 
-1750693741 d:\progra2\git\maxikiosco-tpi\proveedorarchivo.h
+1750881741 d:\progra2\git\maxikiosco-tpi\proveedorarchivo.h
 	"Proveedores.h"
 
 1750693741 d:\progra2\git\maxikiosco-tpi\proveedores.h
@@ -113,10 +113,11 @@
 
 1750693741 d:\progra2\git\maxikiosco-tpi\informes.h
 
-1750880779 source:d:\progra2\git\maxikiosco-tpi\consultas.cpp
+1750881915 source:d:\progra2\git\maxikiosco-tpi\consultas.cpp
 	<iostream>
 	"Consultas.h"
 	"ProductosArchivo.h"
+	"ProveedorArchivo.h"
 
 1750880560 d:\progra2\git\maxikiosco-tpi\consultas.h
 	"Productos.h"

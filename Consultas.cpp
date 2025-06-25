@@ -2,6 +2,7 @@
 using namespace std;
 #include "Consultas.h"
 #include "ProductosArchivo.h"
+#include "ProveedorArchivo.h"
 
 Consultas::Consultas(){
 };
@@ -22,7 +23,7 @@ void Consultas::menuconsultas(){
 
         switch (opcion) {
             case 1:
-                ///mostrarProveedoresActivos();
+               mostrarProveedoresActivos();
 
                 break;
             case 2:
@@ -41,12 +42,25 @@ void Consultas::menuconsultas(){
     }
 
 void Consultas::mostrarProveedoresActivos(){
+ProveedorArchivo dat;
+int cantidad = dat.getCantidadRegistros();
 
+Proveedores *vecProveedores;
 
+vecProveedores = new Proveedores [cantidad];
+
+dat.leerMuchos(vecProveedores, cantidad);
+
+for (int o=0; o<cantidad; o++){
+
+    cout<< "=================================="<<endl;
+    cout<<" Producto activo :"<<vecProveedores[o].getNombre()<<" telefono "<<vecProveedores[o].getTelefono();
 
 }
 
+}
 ///****************************************************************************************************************************
+
 void Consultas::mostrarProductosActivos(){
 ProductosArchivo dat;
 int cantidad = dat.cantidadTotalProductos();

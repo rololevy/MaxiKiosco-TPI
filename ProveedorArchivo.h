@@ -19,6 +19,8 @@ public:
 
     void setregActivo(bool estado);
     bool getregActivo();
+
+    bool leerMuchos(Proveedores reg[], int cantidad);
 };
 
 
