@@ -84,7 +84,7 @@ void informes::productosConMenosStock(){
             nombreProdMin = objProd.getnombreProducto();
             band = false;
         }
-        else if(menosStock<objProd.getstock()){
+        else if(menosStock>objProd.getstock()){
             menosStock = objProd.getstock();
             nombreProdMin = objProd.getnombreProducto();
         }
