@@ -6,6 +6,7 @@ using namespace std;
 #include "Consultas.h"
 
 
+
 void MenuPrincipal::mostrar(){
 
     int opcion;
@@ -16,7 +17,7 @@ void MenuPrincipal::mostrar(){
     do {
         cout << "\n--- Menu ---" << endl;
         cout << "1. Productos" << endl;
-        cout << "2. Cargar Proveedor" << endl;
+        cout << "2. Proveedor" << endl;
         cout << "3. Cargar Compra" << endl;
         cout << "4. Listados" << endl;
         cout << "5. Consultas" << endl;
