@@ -1,4 +1,4 @@
-/*#pragma once
+#pragma once
 #include <string>
 
 class Comprastotal {
@@ -25,4 +25,3 @@ public:
     void cargar();
     void mostrar();
 };
-*/

@@ -33,7 +33,7 @@ void MenuPrincipal::mostrar(){
         switch (opcion) {
             case 1:
                 cargas.mostrar();
-                ;
+
                 break;
             case 2:
                 a.cargarProveedor();
@@ -62,4 +62,5 @@ void MenuPrincipal::mostrar(){
     } while (opcion != 0);
 
     }
+
 

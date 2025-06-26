@@ -25,7 +25,7 @@ std::string getTelefono();
 std::string getemail();
 std::string getDireccion();
 bool getEstado();
-void setidProveedor( std::string Proveedor);
+bool setidProveedor( std::string Proveedor);
 void setCUIT(std::string CUIT);
 void setNombre(std::string Nombre);
 void setTelefono(std::string Telefono);

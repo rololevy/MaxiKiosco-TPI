@@ -57,9 +57,13 @@ return _estado;
 
 
 
-void Proveedores::setidProveedor( std::string Proveedor){
-strcpy (_idProveedor, Proveedor.c_str());
-}
+bool Proveedores::setidProveedor( std::string Proveedor){
+    if(Proveedor.size()>30){
+            return false;
+
+       } else {strcpy (_idProveedor, Proveedor.c_str());
+       return true;}
+    }
 
 void Proveedores::setCUIT(std::string CUIT){
 strcpy(_CUIT, CUIT.c_str());

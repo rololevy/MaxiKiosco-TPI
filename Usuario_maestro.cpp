@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <cstring>
-#include <limits>
 using namespace std;
 #include "Usuario_maestro.h"
 #include "Productos.h"
@@ -37,7 +36,7 @@ cout << "Ingrese precio Unitario"<< endl;
 while (!(cin >> precioUnitario)) {
         cout << "Entrada no v lida. Por favor ingresa un n£mero: "<<endl;
         cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.ignore();
     }
 caso4=prodCarga.setprecioUnitario(precioUnitario);
 
@@ -45,23 +44,26 @@ cout<<"Ingrese stock"<< endl;
 while (!(cin >> stock)) {
         cout << "Entrada no v lida. Por favor ingresa un n£mero: "<<endl;
         cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.ignore();
     }
 caso5=prodCarga.setstock(stock);
 
 
 
 if (caso1 && caso2 && caso3 && caso4 && caso5){
+
     if (registro.Guardar(prodCarga)){
 
     cout<< "Se guardo correctamente!"<<endl;
 }
 
+}
 
 else {
-        cout<<"Hubo un error al realizar la carga"<<endl;}
-
-}
+        cout<<"Error al ingresar datos, intenta realizar la carga nuevamente..."<<endl;
+        }
+        system ("pause");
+        system("cls");
 }
 
 void Usuario_maestro::eliminarProducto (){
