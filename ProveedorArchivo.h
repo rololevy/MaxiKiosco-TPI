@@ -9,18 +9,17 @@ private:
 public:
     ProveedorArchivo(std::string nombreArchivo);
     ProveedorArchivo();
-    ProveedorArchivo leerUno(int pos);
+    Proveedores leerUno(int pos);
     bool Guardar(Proveedores maxi);
+    bool Guardar (Proveedores prodP, int Maxi);
     bool Modificar(Proveedores maxi, int pos);
     bool Eliminar(Proveedores maxi,int pos);
-    //int listarTodos(Proveedores *vector, int cantRegistros);
     int getCantidadRegistros();
     int listarTodos();
+    int buscarProveedor(std::string IDproveedor);
 
     void setregActivo(bool estado);
     bool getregActivo();
-
-    bool leerMuchos(Proveedores reg[], int cantidad);
 };
 
 

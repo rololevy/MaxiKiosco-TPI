@@ -5,7 +5,7 @@
 class Proveedores{
 
 private:
-    int _idProveedor;
+    char _idProveedor[30];
     char _CUIT[30];
     char _Nombre[30];
     char _Telefono[30];
@@ -17,30 +17,27 @@ private:
 public:
 
 Proveedores();
-Proveedores(int idProveedor, std::string CUIT, std::string Nombre, std::string Telefono, std::string Email, std::string Direccion, bool estado);
-int getidProveedor();
-const char* getCUIT();
-const char* getNombre();
-const char* getTelefono();
-const char* getemail();
-const char* getDireccion();
-void setidProveedor(const int Proveedor);
-void setCUIT(const char* CUIT);
-void setNombre(const char* Nombre);
-void setTelefono(const char* Telefono);
-void setEmail(const char* Email);
-void setDireccion(const char* Direccion);
+Proveedores(std::string idProveedor, std::string CUIT, std::string Nombre, std::string Telefono, std::string Email, std::string Direccion, bool estado);
+std::string getidProveedor();
+std::string getCUIT();
+std::string getNombre();
+std::string getTelefono();
+std::string getemail();
+std::string getDireccion();
+bool getEstado();
+void setidProveedor( std::string Proveedor);
+void setCUIT(std::string CUIT);
+void setNombre(std::string Nombre);
+void setTelefono(std::string Telefono);
+void setEmail(std::string Email);
+void setDireccion(std::string Direccion);
+void setEstado(bool estado);
+
+
 void Cargar();
 void Mostrar();
-void setEstado(bool estado);
-bool getEstado();
 void Opcmenu();
 
 };
-
-
-
-
-
 
 

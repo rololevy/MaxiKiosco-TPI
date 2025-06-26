@@ -11,17 +11,37 @@ ProveedorArchivo::ProveedorArchivo(){
 _nombreArchivo="Proveedores.dat";
 }
 
- ProveedorArchivo ProveedorArchivo::leerUno(int pos){
+ Proveedores ProveedorArchivo::leerUno(int pos){
  FILE *ProvArchivo = fopen(_nombreArchivo.c_str(), "rb");
  if(ProvArchivo==NULL){
     cout << "FALLA en el ingreso al archivo" << endl;
  }
- ProveedorArchivo maxi;
+ Proveedores maxi;
  fseek(ProvArchivo,sizeof(Proveedores)*pos,SEEK_SET);
  fread(&maxi,sizeof(Proveedores),1,ProvArchivo);
  fclose(ProvArchivo);
  return maxi;
  }
+
+
+ bool ProveedorArchivo::Guardar (Proveedores PROV, int Maxi){
+ bool guardado;
+ FILE *Provfile;
+
+ Provfile = fopen (_nombreArchivo.c_str(), "rb+");
+
+ if (Provfile== nullptr){
+    return false;
+ }
+
+ fseek (Provfile, sizeof(Proveedores)*Maxi, SEEK_SET);
+ guardado =fwrite(&PROV, sizeof(Proveedores), 1, Provfile);
+
+ fclose(Provfile);
+
+ return guardado;
+ }
+
 
 
 bool ProveedorArchivo::Guardar(Proveedores maxi){
@@ -46,7 +66,7 @@ fclose(ProvArchivo);
 return Modif;
     }
 
-
+/*  ------> para eliminar
 bool ProveedorArchivo::Eliminar(Proveedores maxi,int pos){
 FILE *ProvArchivo = fopen(_nombreArchivo.c_str(), "rb+");
 if(ProvArchivo==NULL){
@@ -61,7 +81,7 @@ fseek(ProvArchivo, sizeof(Proveedores) * pos, SEEK_SET);
 bool eliminacionExitosa = fwrite(&ProveedorAeliminar, sizeof(Proveedores), 1, ProvArchivo) == 1;
 fclose(ProvArchivo);
     return eliminacionExitosa;
-}
+}*/
 
 void ProveedorArchivo::setregActivo(bool estado){
 _registroActivo=estado;
@@ -100,17 +120,28 @@ fclose(ProvArchivo);
 return cantRegistros;
 }
 
-bool ProveedorArchivo::leerMuchos(Proveedores reg[], int cantidad){
- FILE *pFile;
 
- pFile= fopen (_nombreArchivo.c_str(), "rb");
+int ProveedorArchivo::buscarProveedor(std::string IDproveedor){
+ FILE *ProvArchivo;
+ Proveedores Prov;
+ ProvArchivo= fopen (_nombreArchivo.c_str() , "rb");
+ if (ProvArchivo==nullptr){
 
- if (pFile == nullptr){
-
-    return reg;
+    return -1;
  }
+ int pos=0;
+ while (fread (&Prov,sizeof (Proveedores), 1, ProvArchivo)==1){
 
-fread(reg, sizeof(Proveedores), cantidad, pFile);
-fclose(pFile);
- return true;
-}
+    if (Prov.getidProveedor()==IDproveedor){
+        fclose (ProvArchivo);
+        return pos;
+
+    }
+
+    pos++;
+ }
+ fclose (ProvArchivo);
+ return -1;
+
+
+ }
