@@ -83,11 +83,10 @@
 	<cstring>
 	"Proveedores.h"
 
-1750964529 source:d:\progra2\git\maxikiosco-tpi\usuario_maestro.cpp
+1750964573 source:d:\progra2\git\maxikiosco-tpi\usuario_maestro.cpp
 	<iostream>
 	<string>
 	<cstring>
-	<limits>
 	"Usuario_maestro.h"
 	"Productos.h"
 	"ProductosArchivo.h"
