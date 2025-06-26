@@ -29,6 +29,6 @@ public:
     void setImporte(float importe);
     void setActivo(bool estado);
 
-    // Métodos útiles
+
     void mostrar();
 };
