@@ -54,7 +54,7 @@ dat.leerMuchos(vecProveedores, cantidad);
 for (int o=0; o<cantidad; o++){
 
     cout<< "=================================="<<endl;
-    cout<<" PROVEEDOR ACTIVO :"<<vecProveedores[o].getNombre()<<" TELEFONO "<<vecProveedores[o].getTelefono();
+    cout<<" PROVEEDOR ACTIVO :   "<<vecProveedores[o].getNombre()<<"||   TELEFONO    "<<vecProveedores[o].getTelefono()<<endl;
 
 }
 

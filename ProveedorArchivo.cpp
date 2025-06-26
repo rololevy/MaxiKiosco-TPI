@@ -145,3 +145,18 @@ int ProveedorArchivo::buscarProveedor(std::string IDproveedor){
 
 
  }
+
+ bool ProveedorArchivo::leerMuchos(Proveedores reg[], int cantidad){
+ FILE *pFile;
+
+ pFile= fopen (_nombreArchivo.c_str(), "rb");
+
+ if (pFile == nullptr){
+
+    return reg;
+ }
+
+fread(reg, sizeof(Proveedores), cantidad, pFile);
+fclose(pFile);
+ return true;
+}
