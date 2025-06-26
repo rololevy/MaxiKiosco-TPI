@@ -9,7 +9,7 @@ private:
     char _tipoProducto[15];
     float _precioUnitario;
     int _stock;
-    bool _estado=true;
+    bool _estado;
 
 public:
     Productos ();

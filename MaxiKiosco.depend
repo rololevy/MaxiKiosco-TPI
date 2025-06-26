@@ -8,7 +8,7 @@
 	"Productos.h"
 	<iostream>
 
-1750943605 d:\progra2\git\maxikiosco-tpi\productos.h
+1750950234 d:\progra2\git\maxikiosco-tpi\productos.h
 	<string>
 
 1749430914 d:\progra2\git\maxikiosco-tpi\menuprincipal.h
@@ -25,7 +25,7 @@
 	"Productos.h"
 	"Proveedores.h"
 
-1750945108 source:d:\progra2\git\maxikiosco-tpi\productosarchivo.cpp
+1750947077 source:d:\progra2\git\maxikiosco-tpi\productosarchivo.cpp
 	"ProductosArchivo.h"
 	"Productos.h"
 	<iostream>
@@ -116,7 +116,7 @@
 
 1750693741 d:\progra2\git\maxikiosco-tpi\informes.h
 
-1750945420 source:d:\progra2\git\maxikiosco-tpi\consultas.cpp
+1750949924 source:d:\progra2\git\maxikiosco-tpi\consultas.cpp
 	<iostream>
 	"Consultas.h"
 	"ProductosArchivo.h"

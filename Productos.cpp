@@ -10,7 +10,7 @@ strcpy (_nombreProducto, "");
 strcpy (_tipoProducto, "");
  _precioUnitario=0;
  _stock=0;
- _estado=false;
+ _estado=true;
 
 
 };

@@ -52,12 +52,13 @@ vecProveedores = new Proveedores [cantidad];
 dat.leerMuchos(vecProveedores, cantidad);
 
 for (int o=0; o<cantidad; o++){
-
+if(vecProveedores[o].getEstado()==true){
     cout<< "=================================="<<endl;
     cout<<" PROVEEDOR ACTIVO :   "<<vecProveedores[o].getNombre()<<"||   TELEFONO    "<<vecProveedores[o].getTelefono()<<endl;
 
 }
 
+}
 }
 ///****************************************************************************************************************************
 
@@ -73,14 +74,15 @@ dat.leerMuchos(vecProductos, cantidad);
 
 for (int o=0; o<cantidad; o++){
 
+        if(vecProductos[o].getEstado()==true){
+
     cout<< "=================================="<<endl;
     cout<<" PRODUCTO ACTIVO :"<<vecProductos[o].getnombreProducto()<<" STOCK "<<vecProductos[o].getstock()<<endl;
 
 
 }
-
-
-
+}
 
 }
+
 
