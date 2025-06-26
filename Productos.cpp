@@ -24,27 +24,50 @@ setstock (stock);
 
  };
  ///--------------------------------------------------------------------------------------------------
-void Productos::setIDProducto(std::string IDProducto) {
-    strcpy (_IDProducto, IDProducto.c_str());
+bool Productos::setIDProducto(std::string IDProducto) {
+    if(IDProducto.size()>11){
+            return false;
 
-}
-
-void Productos::setnombreProducto(std::string nombre) {
-   strcpy (_nombreProducto, nombre.c_str());
-}
-
-void Productos::settipoProducto(std::string tipo) {
-    strcpy (_tipoProducto, tipo.c_str());
-}
-
-void Productos::setprecioUnitario(float precio) {
-
-    _precioUnitario = precio;
+       } else {strcpy (_IDProducto, IDProducto.c_str());
+       return true;}
 
 
 }
 
-void Productos::setstock(int stock) {
+bool Productos::setnombreProducto(std::string nombre) {
+    if(nombre.size()>16){
+            return false;
+
+       } else {strcpy (_nombreProducto, nombre.c_str());
+       return true;}
+
+   }
+
+bool Productos::settipoProducto(std::string tipo) {
+    if(tipo.size()>16){
+            return false;
+
+       } else {strcpy (_tipoProducto, tipo.c_str());
+       return true;}
+
+    }
+
+bool Productos::setprecioUnitario(float precio) {
+
+    if (precio < 0) {
+            cout << "Error: el precio no puede ser negativo..." << endl;
+            return 0;
+        }
+        _precioUnitario = precio;
+    }
+
+
+
+bool Productos::setstock(int stock) {
+    if (stock < 0) {
+            cout << "Error: el precio no puede ser negativo..." << endl;
+            return 0;
+        }
      _stock = stock;
 }
 

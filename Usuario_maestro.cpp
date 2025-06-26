@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include <limits>
 using namespace std;
 #include "Usuario_maestro.h"
 #include "Productos.h"
@@ -17,85 +18,50 @@ void Usuario_maestro::cargarProducto (){
 string IDProducto, nombreProducto, tipoProducto;
 float precioUnitario;
 int stock;
-bool estado;
-
-////aca se valida
-
+bool caso1, caso2, caso3, caso4, caso5;
 
  cout <<"Ingrese ID Producto"<<endl;
  cin.ignore();
  getline(cin, IDProducto);
+ caso1=prodCarga.setIDProducto(IDProducto);
 
 cout << "Ingrese Nombre Producto"<< endl;
 getline(cin, nombreProducto);
+caso2=prodCarga.setnombreProducto(nombreProducto);
 
 cout <<"Ingrese tipo de producto"<< endl;
 getline(cin, tipoProducto);
+caso3=prodCarga.settipoProducto(tipoProducto);
 
 cout << "Ingrese precio Unitario"<< endl;
-cin>> precioUnitario;
+while (!(cin >> precioUnitario)) {
+        cout << "Entrada no v lida. Por favor ingresa un n£mero: "<<endl;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+caso4=prodCarga.setprecioUnitario(precioUnitario);
 
 cout<<"Ingrese stock"<< endl;
-cin>> stock;
+while (!(cin >> stock)) {
+        cout << "Entrada no v lida. Por favor ingresa un n£mero: "<<endl;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+caso5=prodCarga.setstock(stock);
 
 
 
-
-prodCarga= Productos(IDProducto, nombreProducto, tipoProducto, precioUnitario, stock);
-
-
-if (registro.Guardar(prodCarga)){
+if (caso1 && caso2 && caso3 && caso4 && caso5){
+    if (registro.Guardar(prodCarga)){
 
     cout<< "Se guardo correctamente!"<<endl;
 }
-else{
-    cout<<"Hubo un error al realizar la carga"<<endl;
-
-}
-}
-
-void Usuario_maestro::listarProductos(){
-Usuario_maestro mostrarEnLista;
- ProductosArchivo pProductos;
- Productos registro;
-
- int cantidadRegistros;
-
-  cantidadRegistros= pProductos.cantidadTotalProductos();
-if (cantidadRegistros>0){
-    for ( int i=0; i< cantidadRegistros; i++){
-
-    registro=pProductos.leer(i);
-
-    mostrarEnLista.mostrarProductosActivos(registro);
 
 
-  }
-
-
-}
- else {
-        cout<<"No hay registros para mostrar..."<<endl;
-    }
-
-}
-
-void Usuario_maestro::mostrarProductosActivos(Productos registro){
-bool reg=registro.getEstado();
-
-if(reg){
-cout<<"**************************************************"<<endl;
-cout << "ID Producto : " <<registro.getIDProducto() << endl;
-cout << "Nombre Producto : " << registro.getnombreProducto() << endl;
-cout << "Tipo Producto : " << registro.gettipoProducto() << endl;
-cout << "Precio Unitario $: " << registro.getprecioUnitario() << endl;
-cout << "Stock : " << registro.getstock()<< endl;
-cout<<"**************************************************"<<endl;
-}
 else {
-    cout<<"No hay registros activos para mostrar..."<<endl;
-}
+        cout<<"Hubo un error al realizar la carga"<<endl;}
 
+}
 }
 
 void Usuario_maestro::eliminarProducto (){
@@ -688,5 +654,3 @@ else{
 }
 
 }
-
-

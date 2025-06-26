@@ -9,8 +9,8 @@ private:
     float importe;
 
 public:
-    Comprastotal();  // Constructor por defecto
-    Comprastotal(std::string idProd, std::string idComp, int cant, float imp); // Constructor con parámetros
+    Comprastotal();
+    Comprastotal(std::string idProd, std::string idComp, int cant, float imp);
 
     std::string getIDProducto();
     std::string getIDCompra();

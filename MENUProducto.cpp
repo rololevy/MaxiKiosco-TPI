@@ -13,9 +13,8 @@ int Opcion;
   cout<<"---------------------------------------------------"<<endl;
         cout << "      Menu Producto     "<<endl;
         cout << "1. Cargar nuevo producto"<<endl;
-        cout << "2. Listado de productos activos"<<endl;
-        cout << "3. Eliminar producto"<<endl;
-        cout << "4. Modificar datos del producto"<<endl;
+        cout << "2. Eliminar producto"<<endl;
+        cout << "3. Modificar datos del producto"<<endl;
         cout << "0. Salir" << endl;
         cout << "Elija una opci¢n:  ";
   cin >> Opcion;
@@ -26,22 +25,14 @@ int Opcion;
     break;
 
    case 2:
-       cargas.listarProductos();
-    break;
-
-   case 3:
        cargas.eliminarProducto();
     break;
 
-   case 4:
+   case 3:
        cargas.modificarProducto();
     break;
 
-   case 5:
-
-    break;
-
-    default:
+   default:
         cout << "Elija una opcion valida:" << endl;
 
    }

@@ -74,7 +74,7 @@ dat.leerMuchos(vecProductos, cantidad);
 for (int o=0; o<cantidad; o++){
 
     cout<< "=================================="<<endl;
-    cout<<" PRODUCTO ACTIVO :"<<vecProductos[o].getnombreProducto()<<" STOCK "<<vecProductos[o].getstock();
+    cout<<" PRODUCTO ACTIVO :"<<vecProductos[o].getnombreProducto()<<" STOCK "<<vecProductos[o].getstock()<<endl;
 
 
 }

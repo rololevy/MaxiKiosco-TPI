@@ -8,6 +8,7 @@ using namespace std;
 
 
 
+
 void MenuPrincipal::mostrar(){
 
     int opcion;
@@ -15,6 +16,7 @@ void MenuPrincipal::mostrar(){
     informes inf;
     Consultas con;
     Usuario_maestro a;
+
 
     do {
         cout << "\n--- Menu ---" << endl;
@@ -38,7 +40,7 @@ void MenuPrincipal::mostrar(){
                 ;
                 break;
             case 3:
-                ;
+                a.cargarCompras();
                 break;
             case 4:
 
