@@ -19,10 +19,9 @@ float precioUnitario;
 int stock;
 bool caso1, caso2, caso3, caso4, caso5;
 
- cout <<"Ingrese ID Producto"<<endl;
- cin.ignore();
- getline(cin, IDProducto);
- caso1=prodCarga.setIDProducto(IDProducto);
+    IDProducto = std::to_string(registro.getNuevoID());
+    caso1 = prodCarga.setIDProducto(IDProducto);
+    cout << "ID asignado: " << IDProducto << endl;
 
 cout << "Ingrese Nombre Producto"<< endl;
 getline(cin, nombreProducto);
@@ -34,7 +33,7 @@ caso3=prodCarga.settipoProducto(tipoProducto);
 
 cout << "Ingrese precio Unitario"<< endl;
 while (!(cin >> precioUnitario)) {
-        cout << "Entrada no v lida. Por favor ingresa un n£mero: "<<endl;
+        cout << "Entrada no vÂ lida. Por favor ingresa un nÂ£mero: "<<endl;
         cin.clear();
         cin.ignore();
     }
@@ -42,7 +41,7 @@ caso4=prodCarga.setprecioUnitario(precioUnitario);
 
 cout<<"Ingrese stock"<< endl;
 while (!(cin >> stock)) {
-        cout << "Entrada no v lida. Por favor ingresa un n£mero: "<<endl;
+        cout << "Entrada no vÂ lida. Por favor ingresa un nÂ£mero: "<<endl;
         cin.clear();
         cin.ignore();
     }
@@ -117,7 +116,7 @@ int Opcion;
         cout << "4. Precio unitario"<<endl;
         cout << "5. Stock"<<endl;
         cout << "0. Salir" << endl;
-        cout << "Elija una opci¢n:  ";
+        cout << "Elija una opciÂ¢n:  ";
   cin >> Opcion;
 
       switch(Opcion){
@@ -284,10 +283,9 @@ char CUIT_str[30], Nombre_str[30], Telefono_str[30], Email_str[30], Direccion_st
 char idProv_str[30];
 bool Estado=true;
 
-cout << "Carga de IDProveedor" << endl;
-cin >> idProv_str;
-proveedor.setidProveedor(idProv_str);
-cin.ignore();
+    strcpy(idProv_str, std::to_string(ArchivodeProveedores.getNuevoID()).c_str());
+    proveedor.setidProveedor(idProv_str);
+    cout << "ID asignado: " << idProv_str << endl;
 
 cout << "Carga de CUIT" << endl;
 cin >> CUIT_str;
@@ -609,9 +607,8 @@ float Importe;
 Compras compra;
 ComprasArchivo Arch;
 
-cout << "Carga ID de la compra" << endl;
-cin.ignore();
-getline(cin,idCompra);
+    idCompra = std::to_string(Arch.getNuevoID());
+    cout << "ID asignado: " << idCompra << endl;
 
 cout << "Carga ID de Proveedor" << endl;
 getline(cin,idProv);

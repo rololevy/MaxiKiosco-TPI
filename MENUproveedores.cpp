@@ -1,5 +1,5 @@
 #include <iostream>
-#include "MENUProveedores.h"
+#include "MENUproveedores.h"
 #include "Usuario_maestro.h"
 using namespace std;
 
