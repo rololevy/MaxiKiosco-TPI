@@ -1,4 +1,3 @@
-#pragma once
 #include <cstring>
 #include "Productos.h"
 #include <iostream>

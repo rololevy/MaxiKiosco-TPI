@@ -11,17 +11,18 @@ ProveedorArchivo::ProveedorArchivo(){
 _nombreArchivo="Proveedores.dat";
 }
 
- ProveedorArchivo ProveedorArchivo::leerUno(int pos){
- FILE *ProvArchivo = fopen(_nombreArchivo.c_str(), "rb");
- if(ProvArchivo==NULL){
-    cout << "FALLA en el ingreso al archivo" << endl;
- }
- ProveedorArchivo maxi;
- fseek(ProvArchivo,sizeof(Proveedores)*pos,SEEK_SET);
- fread(&maxi,sizeof(Proveedores),1,ProvArchivo);
- fclose(ProvArchivo);
- return maxi;
- }
+Proveedores ProveedorArchivo::leerUno(int pos){
+    Proveedores reg;
+    FILE *ProvArchivo = fopen(_nombreArchivo.c_str(), "rb");
+    if(ProvArchivo==NULL){
+        cout << "FALLA en el ingreso al archivo" << endl;
+        return reg;
+    }
+    fseek(ProvArchivo,sizeof(Proveedores)*pos,SEEK_SET);
+    fread(&reg,sizeof(Proveedores),1,ProvArchivo);
+    fclose(ProvArchivo);
+    return reg;
+}
 
 
 bool ProveedorArchivo::Guardar(Proveedores maxi){

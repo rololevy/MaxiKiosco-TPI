@@ -9,7 +9,7 @@ private:
 public:
     ProveedorArchivo(std::string nombreArchivo);
     ProveedorArchivo();
-    ProveedorArchivo leerUno(int pos);
+    Proveedores leerUno(int pos);
     bool Guardar(Proveedores maxi);
     bool Modificar(Proveedores maxi, int pos);
     bool Eliminar(Proveedores maxi,int pos);
