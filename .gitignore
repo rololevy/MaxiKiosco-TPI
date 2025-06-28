@@ -1,0 +1,10 @@
+# Ignore build artifacts
+*.o
+*.exe
+maxi
+bin/
+obj/
+*.depend
+*.layout
+MaxiKiosco.cbp
+*.dat

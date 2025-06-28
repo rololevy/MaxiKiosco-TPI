@@ -3,13 +3,10 @@ using namespace std;
 #include "ProveedorArchivo.h"
 
 
-ProveedorArchivo::ProveedorArchivo(std::string nombreArchivo){
-_nombreArchivo=nombreArchivo;
-}
-
 ProveedorArchivo::ProveedorArchivo(){
 _nombreArchivo="Proveedores.dat";
 }
+
 
  Proveedores ProveedorArchivo::leerUno(int pos){
  FILE *ProvArchivo = fopen(_nombreArchivo.c_str(), "rb");
@@ -43,16 +40,6 @@ _nombreArchivo="Proveedores.dat";
  }
 
 
-
-bool ProveedorArchivo::Guardar(Proveedores maxi){
-FILE *ProvArchivo = fopen(_nombreArchivo.c_str(),"ab");
-if(ProvArchivo==NULL){
-        return false;
-    }
-bool Archi= fwrite(&maxi,sizeof(Proveedores),1, ProvArchivo);
-fclose(ProvArchivo);
-return Archi;
-    }
 
 
 bool ProveedorArchivo::Modificar(Proveedores maxi, int pos){
