@@ -9,7 +9,7 @@ private:
     char _tipoProducto[15];
     float _precioUnitario;
     int _stock;
-    bool _estado=true;
+    bool _estado;
 
 public:
     Productos ();
@@ -22,13 +22,13 @@ public:
     int getstock();
     bool getEstado();
 
-    void setIDProducto(std::string IDProducto);
-    void setnombreProducto(std::string nombre);
-    void settipoProducto(std::string tipo);
-    void setprecioUnitario(float precio);
-    void setstock(int stock);
+    bool setIDProducto(std::string IDProducto);
+    bool setnombreProducto(std::string nombre);
+    bool settipoProducto(std::string tipo);
+    bool setprecioUnitario(float precio);
+    bool setstock(int stock);
     void setEstado (bool estado);
-    std::string toCSV();
+
 
     void cargar();
     void mostrar();

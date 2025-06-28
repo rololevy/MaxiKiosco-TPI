@@ -45,7 +45,7 @@ bool ComprasArchivo::modificar(Compras maxi, int pos) {
 bool ComprasArchivo::eliminar(Compras maxi, int pos) {
     FILE* archivo = fopen(_nombreArchivo.c_str(), "rb+");
     if (archivo == nullptr) return false;
-    // Se supone que Compras tiene un mÃ©todo setActivo(false);
+    // Se supone que Compras tiene un m‚todo setActivo(false);
     maxi.setActivo(false);
     fseek(archivo, sizeof(Compras) * pos, SEEK_SET);
     bool exito = fwrite(&maxi, sizeof(Compras), 1, archivo);
@@ -60,7 +60,7 @@ int ComprasArchivo::listarTodos() {
     Compras maxi;
     while (fread(&maxi, sizeof(Compras), 1, archivo)) {
         if (maxi.getActivo()) {
-            maxi.mostrar();  // Suponiendo que tiene un mÃ©todo mostrar()
+            maxi.mostrar();  // Suponiendo que tiene un m‚todo mostrar()
             Comprascargadas++;
         }
     }

@@ -53,4 +53,3 @@ void MenuPrincipal::mostrar(){
     } while (opcion != 0);
 
     }
-

@@ -4,18 +4,18 @@ using namespace std;
 #include "Proveedores.h"
 
 Proveedores::Proveedores(){
-_idProveedor=0;
+strcpy (_idProveedor, "");
 strcpy (_CUIT, "");
 strcpy (_Nombre, "");
 strcpy (_Telefono, "");
 strcpy (_email, "");
 strcpy (_direccion, "");
- _estado=false;
+ _estado=true;
 
 }
 
-Proveedores::Proveedores(int idProveedor, std::string CUIT, std::string Nombre, std::string Telefono, std::string Email, std::string Direccion, bool estado){
-_idProveedor=idProveedor;
+Proveedores::Proveedores(std::string idProveedor, std::string CUIT, std::string Nombre, std::string Telefono, std::string Email, std::string Direccion, bool estado){
+strcpy (_idProveedor, idProveedor.c_str());
 strcpy (_CUIT, CUIT.c_str());
 strcpy (_Nombre, Nombre.c_str());
 strcpy (_Telefono, Telefono.c_str());
@@ -27,53 +27,69 @@ strcpy (_direccion, Direccion.c_str());
 }
 
 
-int Proveedores::getidProveedor(){
+std::string Proveedores::getidProveedor(){
 return _idProveedor;
 }
 
-const char* Proveedores::getCUIT(){
+std::string Proveedores::getCUIT(){
 return _CUIT;
 }
 
-const char* Proveedores::getNombre(){
+std::string Proveedores::getNombre(){
 return _Nombre;
 }
 
-const char* Proveedores::getTelefono(){
+std::string Proveedores::getTelefono(){
 return _Telefono;
 }
 
-const char* Proveedores::getemail(){
+std::string Proveedores::getemail(){
 return _email;
 }
 
-const char* Proveedores::getDireccion(){
+std::string Proveedores::getDireccion(){
 return _direccion;
 }
 
-void Proveedores::setidProveedor(const int Proveedor){
-_idProveedor=Proveedor;
+bool Proveedores::getEstado(){
+return _estado;
 }
 
-void Proveedores::setCUIT(const char* CUIT){
-strcpy(_CUIT, CUIT);
+
+
+bool Proveedores::setidProveedor( std::string Proveedor){
+    if(Proveedor.size()>30){
+            return false;
+
+       } else {strcpy (_idProveedor, Proveedor.c_str());
+       return true;}
+    }
+
+void Proveedores::setCUIT(std::string CUIT){
+strcpy(_CUIT, CUIT.c_str());
 }
 
-void Proveedores::setNombre(const char* Nombre){
-strcpy(_Nombre, Nombre);
+void Proveedores::setNombre(std::string Nombre){
+strcpy(_Nombre, Nombre.c_str());
 }
 
-void Proveedores::setTelefono(const char* Telefono){
-strcpy(_Telefono, Telefono);
+void Proveedores::setTelefono(std::string Telefono){
+strcpy(_Telefono, Telefono.c_str());
 }
 
-void Proveedores::setEmail(const char* Email){
-strcpy(_email, Email);
+void Proveedores::setEmail(std::string Email){
+strcpy(_email, Email.c_str());
 }
 
-void Proveedores::setDireccion(const char* Direccion){
-strcpy(_direccion, Direccion);
+void Proveedores::setDireccion(std::string Direccion){
+strcpy(_direccion, Direccion.c_str());
 }
+
+void Proveedores::setEstado(bool estado){
+_estado=estado;
+}
+
+
 /*  -----------------------------------------------------------> POSIBLEMENTE BORRAR POR MANAGER
 void Proveedores::Cargar(){
 string CUIT_str, Nombre_str, Telefono_str, Email_str, Direccion_str;
@@ -120,13 +136,6 @@ else{
 
 }
 
-void Proveedores::setEstado(bool estado){
-_estado=estado;
-}
-
-bool Proveedores::getEstado(){
-return _estado;
-}
 
 
 void Proveedores::Opcmenu(){

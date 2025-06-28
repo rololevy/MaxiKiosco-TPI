@@ -98,6 +98,23 @@ FILE *pFile;
  return reg;
 
 }
+
+bool ProductosArchivo::leerMuchos(Productos reg[], int cantidad){
+ FILE *pFile;
+
+ pFile= fopen (_nombreArchivo.c_str(), "rb");
+
+ if (pFile == nullptr){
+
+    return reg;
+ }
+
+fread(reg, sizeof(Productos), cantidad, pFile);
+fclose(pFile);
+ return true;
+}
+
+
 ///*************************************************************************************************
 int ProductosArchivo::buscarProducto(std::string IDProducto){
  FILE *pFile;
@@ -167,6 +184,11 @@ else {
     cout<<"No hay registros activos para mostrar..."<<endl;
 }
 
+
+ }
+
+ int ProductosArchivo::getNuevoID(){
+ return cantidadTotalProductos()+1;
 
  }
 

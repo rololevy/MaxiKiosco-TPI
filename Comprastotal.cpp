@@ -1,8 +1,9 @@
+using namespace std;
+#include <iostream>
 #include "Comprastotal.h"
 #include <cstring>
-#include <iostream>
 
-// Constructor por defecto
+
 Comprastotal::Comprastotal() {
     strcpy(idProducto, "");
     strcpy(idCompra, "");
@@ -10,7 +11,7 @@ Comprastotal::Comprastotal() {
     importe = 0.0f;
 }
 
-// Constructor con parámetros
+
 Comprastotal::Comprastotal(std::string idProd, std::string idComp, int cant, float imp) {
     setIDProducto(idProd);
     setIDCompra(idComp);
@@ -18,13 +19,13 @@ Comprastotal::Comprastotal(std::string idProd, std::string idComp, int cant, flo
     importe = imp;
 }
 
-// Getters
+
 std::string Comprastotal::getIDProducto() {
-    return std::string(idProducto);
+    return idProducto;
 }
 
 std::string Comprastotal::getIDCompra() {
-    return std::string(idCompra);
+    return idCompra;
 }
 
 int Comprastotal::getCantidad() {
@@ -35,7 +36,7 @@ float Comprastotal::getImporte() {
     return importe;
 }
 
-// Setters
+
 void Comprastotal::setIDProducto(std::string idProd) {
     strcpy(idProducto, idProd.c_str());
 }
@@ -52,29 +53,24 @@ void Comprastotal::setImporte(float imp) {
     importe = imp;
 }
 
-// Métodos auxiliares
+
 void Comprastotal::cargar() {
-    std::string prod, comp;
-    std::cout << "ID Producto: ";
-    std::getline(std::cin, prod);
+    string prod, comp;
+    cout << "ID Producto: ";
+    cin.ignore();
+    getline(cin, prod);
     setIDProducto(prod);
 
-    std::cout << "ID Compra: ";
-    std::getline(std::cin, comp);
+    cout << "ID Compra: ";
+    getline(cin, comp);
     setIDCompra(comp);
 
-    std::cout << "Cantidad: ";
-    std::cin >> cantidad;
+    cout << "Cantidad: ";
+    cin >> cantidad;
 
-    std::cout << "Importe: ";
-    std::cin >> importe;
+    cout << "Importe: ";
+    cin >> importe;
 
-    std::cin.ignore(); // limpiar el buffer
+
 }
 
-void Comprastotal::mostrar() {
-    std::cout << "ID Producto: " << getIDProducto() << std::endl;
-    std::cout << "ID Compra: " << getIDCompra() << std::endl;
-    std::cout << "Cantidad: " << cantidad << std::endl;
-    std::cout << "Importe: " << importe << std::endl;
-}

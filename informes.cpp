@@ -266,7 +266,7 @@ void informes::comprasPorMes(){
             compraAnio = true;
             if(objCompras.getFecha().getMes()== mes){
                 compraMes = true;
-                objCompras.mostrar();
+///                objCompras.mostrar();
                 cout<<"==================="<<endl;
             }
         }
@@ -450,5 +450,4 @@ void informes::listarComprasPorImporte(){
         c.mostrar();
     }
 }
-
 
