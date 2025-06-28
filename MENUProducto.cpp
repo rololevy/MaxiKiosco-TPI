@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 using namespace std;
 #include "MENUProducto.h"
 #include "Usuario_maestro.h"
@@ -16,8 +17,9 @@ int Opcion;
         cout << "2. Eliminar producto"<<endl;
         cout << "3. Modificar datos del producto"<<endl;
         cout << "0. Salir" << endl;
-        cout << "Elija una opci¢n:  ";
+        cout << "Elija una opciÂ¢n:  ";
   cin >> Opcion;
+  cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
       switch(Opcion){
    case 1:
