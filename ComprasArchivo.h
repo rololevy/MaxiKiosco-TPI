@@ -16,4 +16,5 @@ public:
     bool eliminar(Compras maxi, int pos);
     int listarTodos();
     int getCantidadRegistros();
+    int getNuevoID();
 };

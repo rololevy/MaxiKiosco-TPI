@@ -54,20 +54,22 @@ bool Productos::settipoProducto(std::string tipo) {
 bool Productos::setprecioUnitario(float precio) {
 
     if (precio < 0) {
-            cout << "Error: el precio no puede ser negativo..." << endl;
-            return 0;
-        }
-        _precioUnitario = precio;
+        cout << "Error: el precio no puede ser negativo..." << endl;
+        return false;
     }
+    _precioUnitario = precio;
+    return true;
+}
 
 
 
 bool Productos::setstock(int stock) {
     if (stock < 0) {
-            cout << "Error: el precio no puede ser negativo..." << endl;
-            return 0;
-        }
-     _stock = stock;
+        cout << "Error: el stock no puede ser negativo..." << endl;
+        return false;
+    }
+    _stock = stock;
+    return true;
 }
 
 void Productos::setEstado (bool estado){

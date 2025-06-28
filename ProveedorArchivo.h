@@ -22,6 +22,7 @@ public:
     bool getregActivo();
 
     bool leerMuchos(Proveedores reg[], int cantidad);
+    int getNuevoID();
 };
 
 

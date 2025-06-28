@@ -7,6 +7,14 @@ ProveedorArchivo::ProveedorArchivo(){
 _nombreArchivo="Proveedores.dat";
 }
 
+bool ProveedorArchivo::Guardar(Proveedores PROV){
+ FILE *Provfile = fopen(_nombreArchivo.c_str(), "ab");
+ if(Provfile==nullptr) return false;
+ bool guardado = fwrite(&PROV, sizeof(Proveedores), 1, Provfile);
+ fclose(Provfile);
+ return guardado;
+}
+
 
  Proveedores ProveedorArchivo::leerUno(int pos){
  FILE *ProvArchivo = fopen(_nombreArchivo.c_str(), "rb");
@@ -133,7 +141,7 @@ int ProveedorArchivo::buscarProveedor(std::string IDproveedor){
 
  }
 
- bool ProveedorArchivo::leerMuchos(Proveedores reg[], int cantidad){
+bool ProveedorArchivo::leerMuchos(Proveedores reg[], int cantidad){
  FILE *pFile;
 
  pFile= fopen (_nombreArchivo.c_str(), "rb");
@@ -146,4 +154,8 @@ int ProveedorArchivo::buscarProveedor(std::string IDproveedor){
 fread(reg, sizeof(Proveedores), cantidad, pFile);
 fclose(pFile);
  return true;
+}
+
+int ProveedorArchivo::getNuevoID(){
+    return getCantidadRegistros() + 1;
 }
