@@ -1,3 +1,4 @@
+#include <limits>
 #include <iostream>
 using namespace std;
 #include "MenuPrincipal.h"
@@ -5,6 +6,7 @@ using namespace std;
 #include "informes.h"
 #include "Usuario_maestro.h"
 #include "Consultas.h"
+
 #include <limits>
 
 

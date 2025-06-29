@@ -7,12 +7,13 @@ public :
     void menuconsultas();
     void mostrarProveedoresActivos();
     void mostrarProductosActivos();
-    void buscarProveedorPorCUIT();
-    void buscarProveedorPorTelefono();
-    void buscarProveedorPorEmail();
-    void buscarProveedorPorDireccion();
-    void productosOrdenadosPorCantidad();
-    void productosOrdenadosPorTipo();
-    void productosOrdenadosPorPrecio();
+    void consultarProveedorPorCUIT();
+    void consultarProveedorPorTelefono();
+    void consultarProveedorPorEmail();
+    void consultarProveedorPorDireccion();
+    void listarProductosPorCantidad();
+    void listarProductosPorTipo();
+    void listarProductosPorPrecio();
+
 
 };
