@@ -214,7 +214,7 @@ cout<<"Ingrese ID Producto a modificar :"<<endl;
             getline(cin, tipoProducto);
             setter.settipoProducto(tipoProducto);
 
-        if (registro.Guardar(setter, posicion)){
+        if (registro.Guardar(setter, posicion3)){
             cout<<"Registro modificado correctamente..."<<endl;
         }
         else{
@@ -257,7 +257,7 @@ cout<<"Ingrese ID Producto a modificar :"<<endl;
     break;
 
    case 5:
-         int posicion5;
+        int posicion5;
 cout<<"Ingrese ID Producto a modificar :"<<endl;
     cin.ignore();
     getline(cin, idProducto);
@@ -283,6 +283,8 @@ cout<<"Ingrese ID Producto a modificar :"<<endl;
 
     break;
 
+   case 0:
+        break;
     default:
         cout << "Elija una opcion valida:" << endl;
 
@@ -446,7 +448,7 @@ int Opcion;
         cout << "3. Nombre del Proveedor"<<endl;
         cout << "4. Telefono"<<endl;
         cout << "5. Email"<<endl;
-        cout << "5. Direccion"<<endl;
+        cout << "6. Direccion"<<endl;
         cout << "0. Salir" << endl;
         cout << "Elija una opcion:  ";
   cin >> Opcion;
@@ -589,7 +591,7 @@ cout<<"Ingrese Email a modificar :"<<endl;
 
     break;
 
-    case 6:
+   case 6:
          int pos6;
 cout<<"Ingrese Direccion a modificar :"<<endl;
     cin.ignore();
@@ -616,6 +618,8 @@ cout<<"Ingrese Direccion a modificar :"<<endl;
 
     break;
 
+    case 0:
+        break;
     default:
         cout << "Elija una opcion valida:" << endl;
 

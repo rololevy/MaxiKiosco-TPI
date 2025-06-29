@@ -38,7 +38,8 @@ int Opcion;
    case 4:
        Cargaprov.modificarProveedores();
     break;
-
+   case 0:
+        break;
     default:
         cout << "Elija una opcion valida:" << endl;
 
