@@ -18,8 +18,7 @@ int Opcion;
         cout << "2. Eliminar producto"<<endl;
         cout << "3. Modificar datos del producto"<<endl;
         cout << "0. Salir" << endl;
-  cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "Elija una opci¢n:  ";
+        cout << "Elija una opcion:  ";
   cin >> Opcion;
   cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
@@ -36,6 +35,8 @@ int Opcion;
        cargas.modificarProducto();
     break;
 
+   case 0:
+        break;
    default:
         cout << "Elija una opcion valida:" << endl;
 
