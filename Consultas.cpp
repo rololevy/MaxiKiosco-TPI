@@ -39,7 +39,9 @@ void Consultas::menuconsultas(){
             case 7: listarProductosPorPrecio(); break;
         }
     } while(opcion != 0);
-  
+
+}
+
 void Consultas::mostrarProveedoresActivos(){
 ProveedorArchivo dat;
 int cantidad = dat.getCantidadRegistros();
@@ -316,5 +318,5 @@ void Consultas::listarProductosPorPrecio(){
     for(auto &p: vec){
         arch.mostrarProductosActivos(p);
     }
-}
+}:
 
