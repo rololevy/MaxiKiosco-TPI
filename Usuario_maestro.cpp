@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include <limits>
+#include <cctype>
+#include <algorithm>
 using namespace std;
 #include "Usuario_maestro.h"
 #include "Productos.h"
@@ -38,24 +41,28 @@ cout << "Ingrese Nombre Producto"<< endl;
 getline(cin, nombreProducto);
 caso2=prodCarga.setnombreProducto(nombreProducto);
 
+
+
 cout <<"Ingrese tipo de producto"<< endl;
 getline(cin, tipoProducto);
 caso3=prodCarga.settipoProducto(tipoProducto);
 
 cout << "Ingrese precio Unitario"<< endl;
 while (!(cin >> precioUnitario)) {
-        cout << "Entrada no v lida. Por favor ingresa un n£mero: "<<endl;
+        cout << "Entrada no valida. Por favor ingrese un numero: "<<endl;
         cin.clear();
-        cin.ignore();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
+cin.ignore(numeric_limits<streamsize>::max(), '\n');
 caso4=prodCarga.setprecioUnitario(precioUnitario);
 
 cout<<"Ingrese stock"<< endl;
 while (!(cin >> stock)) {
-        cout << "Entrada no v lida. Por favor ingresa un n£mero: "<<endl;
+        cout << "Entrada no valida. Por favor ingrese un numero: "<<endl;
         cin.clear();
-        cin.ignore();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
+cin.ignore(numeric_limits<streamsize>::max(), '\n');
 caso5=prodCarga.setstock(stock);
 
 
@@ -131,7 +138,7 @@ int Opcion;
         cout << "4. Precio unitario"<<endl;
         cout << "5. Stock"<<endl;
         cout << "0. Salir" << endl;
-        cout << "Elija una opci¢n:  ";
+        cout << "Elija una opciÂ¢n:  ";
   cin >> Opcion;
 
       switch(Opcion){
@@ -294,9 +301,9 @@ cout<<"Ingrese ID Producto a modificar :"<<endl;
 void Usuario_maestro::cargarProveedor(){
     Proveedores proveedor;
     ProveedorArchivo ArchivodeProveedores;
-char CUIT_str[30], Nombre_str[30], Telefono_str[30], Email_str[30], Direccion_str[30];
-char idProv_str[30];
-bool Estado=true;
+    std::string CUIT_str, Nombre_str, Telefono_str, Email_str, Direccion_str;
+    char idProv_str[30];
+    bool Estado=true;
 
     strcpy(idProv_str, std::to_string(ArchivodeProveedores.getNuevoID()).c_str());
     proveedor.setidProveedor(idProv_str);
@@ -304,26 +311,34 @@ bool Estado=true;
 
 cout << "Carga de CUIT" << endl;
 cin >> CUIT_str;
-proveedor.setCUIT(CUIT_str);
+while(!all_of(CUIT_str.begin(), CUIT_str.end(), ::isdigit)){
+    cout << "Debe ingresar solo numeros. Intente nuevamente: ";
+    cin >> CUIT_str;
+}
+proveedor.setCUIT(CUIT_str.c_str());
 
 cout << "Carga de Nombre" << endl;
 cin >> Nombre_str;
-proveedor.setNombre(Nombre_str);
+proveedor.setNombre(Nombre_str.c_str());
 
 cout << "Carga de Telefono" << endl;
 cin >> Telefono_str;
-proveedor.setTelefono(Telefono_str);
+while(!all_of(Telefono_str.begin(), Telefono_str.end(), ::isdigit)){
+    cout << "Debe ingresar solo numeros. Intente nuevamente: ";
+    cin >> Telefono_str;
+}
+proveedor.setTelefono(Telefono_str.c_str());
 
 cout << "Carga de Email" << endl;
 cin >> Email_str;
-proveedor.setEmail(Email_str);
+proveedor.setEmail(Email_str.c_str());
 
 cout << "Carga de Direccion" << endl;
 cin >> Direccion_str;
-proveedor.setDireccion(Direccion_str);
+proveedor.setDireccion(Direccion_str.c_str());
 proveedor.setEstado(Estado);
 
-proveedor= Proveedores (idProv_str, CUIT_str, Nombre_str, Telefono_str, Email_str, Direccion_str,Estado);
+proveedor= Proveedores (idProv_str, CUIT_str.c_str(), Nombre_str.c_str(), Telefono_str.c_str(), Email_str.c_str(), Direccion_str.c_str(),Estado);
 
 
 if (ArchivodeProveedores.Guardar(proveedor)){       /// guardo los datos en Proveedores.dat
@@ -626,16 +641,27 @@ ComprasArchivo Arch;
     cout << "ID asignado: " << idCompra << endl;
 
 cout << "Carga ID de Proveedor" << endl;
+cin.ignore(numeric_limits<streamsize>::max(), '\n');
 getline(cin,idProv);
 
 cout << "Carga de Fecha" << endl;
 Hfecha.Cargar();
 
 cout << "Carga de Importe" << endl;
-cin >> Importe;
+while(!(cin >> Importe)){
+    cout << "Valor invalido. Ingrese nuevamente: ";
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+}
+cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 cout<<"Ingresar OK=1, NO=0"<< endl;
-cin>>estado;
+while(!(cin>>estado) || (estado!=0 && estado!=1)){
+    cout << "Ingrese 1 para activo o 0 para inactivo: ";
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+}
+cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 compra= Compras (idCompra, idProv, Hfecha, Importe, estado);
 

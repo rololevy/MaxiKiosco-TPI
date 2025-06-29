@@ -197,3 +197,57 @@
 	<cstring>
 	"Proveedores.h"
 
+1751139532 source:c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\comprasarchivo.cpp
+	<iostream>
+	<cstdio>
+	"ComprasArchivo.h"
+
+1751139532 c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\comprasarchivo.h
+	<string>
+	"Compras.h"
+
+1751136800 source:c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\informes.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+	<cstdio>
+	<ctime>
+	"informes.h"
+	"Productos.h"
+	"ProductosArchivo.h"
+	"Compras.h"
+	"ComprasArchivo.h"
+	"ProveedorArchivo.h"
+	<map>
+	<vector>
+	<algorithm>
+
+1751136800 c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\informes.h
+
+1751136799 source:c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\menuprincipal.cpp
+	<iostream>
+	"MenuPrincipal.h"
+	"MENUProducto.h"
+	"informes.h"
+	"Usuario_maestro.h"
+
+1751139532 source:c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\productos.cpp
+	<cstring>
+	"Productos.h"
+	<iostream>
+
+1751139532 source:c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\proveedorarchivo.cpp
+	<iostream>
+	"ProveedorArchivo.h"
+
+1751139532 source:c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\usuario_maestro.cpp
+	<iostream>
+	<string>
+	<cstring>
+	"Usuario_maestro.h"
+	"Productos.h"
+	"ProductosArchivo.h"
+	"ProveedorArchivo.h"
+	"ComprasArchivo.h"
+	"Fecha.h"
+

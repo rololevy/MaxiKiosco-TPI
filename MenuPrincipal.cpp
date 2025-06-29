@@ -7,6 +7,8 @@ using namespace std;
 #include "Usuario_maestro.h"
 #include "Consultas.h"
 
+#include <limits>
+
 
 void MenuPrincipal::mostrar(){
 
@@ -24,7 +26,7 @@ void MenuPrincipal::mostrar(){
         cout << "5. Consultas" << endl;
         cout << "6. Informes" << endl;
         cout << "0. Salir" << endl;
-        cout << "Elija una opcin: ";
+        cout << "Elija una opcion: ";
         cin >> opcion;
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 

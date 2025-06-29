@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 using namespace std;
 #include "MENUProducto.h"
 #include "Usuario_maestro.h"
@@ -20,6 +21,7 @@ int Opcion;
   cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Elija una opci¢n:  ";
   cin >> Opcion;
+  cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
       switch(Opcion){
    case 1:
