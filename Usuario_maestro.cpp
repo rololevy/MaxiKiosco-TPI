@@ -8,6 +8,16 @@ using namespace std;
 #include "ProveedorArchivo.h"
 #include "ComprasArchivo.h"
 #include "Fecha.h"
+#include <limits>
+#include <cctype>
+
+static bool esNumero(const std::string &s){
+    if(s.empty()) return false;
+    for(char c: s){
+        if(!isdigit(static_cast<unsigned char>(c))) return false;
+    }
+    return true;
+}
 
 void Usuario_maestro::cargarProducto (){
 
@@ -24,6 +34,7 @@ bool caso1, caso2, caso3, caso4, caso5;
     cout << "ID asignado: " << IDProducto << endl;
 
 cout << "Ingrese Nombre Producto"<< endl;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 getline(cin, nombreProducto);
 caso2=prodCarga.setnombreProducto(nombreProducto);
 
@@ -78,6 +89,10 @@ void Usuario_maestro::eliminarProducto (){
 cout<<"Ingrese ID Producto a eliminar :"<<endl;
     cin.ignore();
     getline(cin, idProducto);
+    while(!esNumero(idProducto)){
+        cout << "ID invalido. Intente nuevamente: ";
+        getline(cin, idProducto);
+    }
     posicion1=registro.buscarProducto(idProducto);
 
     if (posicion1>=0){

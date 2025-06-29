@@ -3,6 +3,7 @@ using namespace std;
 #include "MENUProducto.h"
 #include "Usuario_maestro.h"
 #include "ProductosArchivo.h"
+#include <limits>
 
 
 
@@ -16,7 +17,8 @@ int Opcion;
         cout << "2. Eliminar producto"<<endl;
         cout << "3. Modificar datos del producto"<<endl;
         cout << "0. Salir" << endl;
-        cout << "Elija una opci¢n:  ";
+  cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Elija una opciÂ¢n:  ";
   cin >> Opcion;
 
       switch(Opcion){

@@ -1,9 +1,11 @@
+#include <limits>
 #include <iostream>
 using namespace std;
 #include "MenuPrincipal.h"
 #include "MENUProducto.h"
 #include "informes.h"
 #include "Usuario_maestro.h"
+#include "Consultas.h"
 
 
 void MenuPrincipal::mostrar(){
@@ -24,6 +26,7 @@ void MenuPrincipal::mostrar(){
         cout << "0. Salir" << endl;
         cout << "Elija una opcin: ";
         cin >> opcion;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
         switch (opcion) {
             case 1:
@@ -39,7 +42,10 @@ void MenuPrincipal::mostrar(){
                 inf.Listardatos();
                 break;
             case 5:
-                // Menu de consultas pendiente
+                {
+                    Consultas cons;
+                    cons.menuconsultas();
+                }
                 break;
             case 6:
                 inf.mostrarMenu();
