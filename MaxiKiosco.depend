@@ -124,3 +124,76 @@
 1750880560 d:\progra2\git\maxikiosco-tpi\consultas.h
 	"Productos.h"
 
+1751017296 source:c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\compras.cpp
+	<cstring>
+	<iostream>
+	"Compras.h"
+
+1751017296 c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\compras.h
+	"Fecha.h"
+	<iostream>
+
+1751017296 c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\fecha.h
+
+1751017296 source:c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\comprastotal.cpp
+	<iostream>
+	"Comprastotal.h"
+	<cstring>
+
+1751017296 c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\comprastotal.h
+	<string>
+
+1751017296 source:c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\consultas.cpp
+	<iostream>
+	"Consultas.h"
+	"ProductosArchivo.h"
+	"ProveedorArchivo.h"
+
+1751017296 c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\consultas.h
+	"Productos.h"
+
+1751017296 c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\productos.h
+	<string>
+
+1751017296 c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\productosarchivo.h
+	"Productos.h"
+	<string>
+
+1751139532 c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\proveedorarchivo.h
+	"Proveedores.h"
+
+1751017296 c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\proveedores.h
+	<string>
+
+1751017296 source:c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\fecha.cpp
+	<iostream>
+	"Fecha.h"
+
+1751017296 source:c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\main.cpp
+	<iostream>
+	"MenuPrincipal.h"
+
+1751017296 c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\menuprincipal.h
+
+1751017296 source:c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\menuproducto.cpp
+	<iostream>
+	"MENUProducto.h"
+	"Usuario_maestro.h"
+	"ProductosArchivo.h"
+
+1751017296 c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\menuproducto.h
+
+1751017296 c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\usuario_maestro.h
+	"Productos.h"
+	"Proveedores.h"
+
+1751017296 source:c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\productosarchivo.cpp
+	"ProductosArchivo.h"
+	"Productos.h"
+	<iostream>
+
+1751017296 source:c:\users\ooagu\onedrive\escritorio\tplabo2\maxikiosco-tpi\proveedores.cpp
+	<iostream>
+	<cstring>
+	"Proveedores.h"
+
