@@ -2,13 +2,11 @@
 #include <vector>
 #include <algorithm>
 #include <limits>
+#include <cstdlib>
 using namespace std;
 #include "Consultas.h"
 #include "ProductosArchivo.h"
 #include "ProveedorArchivo.h"
-#include <limits>
-#include <vector>
-#include <algorithm>
 
 Consultas::Consultas(){
 };
@@ -26,17 +24,17 @@ void Consultas::menuconsultas(){
         cout << "6. Productos por Tipo" << endl;
         cout << "7. Productos por Precio" << endl;
         cout << "0. Salir" << endl;
-        cout << "Elija una opcin: ";
+        cout << "Elija una opcion: ";
         cin >> opcion;
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         switch(opcion){
-            case 1: consultarProveedorPorCUIT(); break;
-            case 2: consultarProveedorPorTelefono(); break;
-            case 3: consultarProveedorPorEmail(); break;
-            case 4: consultarProveedorPorDireccion(); break;
-            case 5: listarProductosPorCantidad(); break;
-            case 6: listarProductosPorTipo(); break;
-            case 7: listarProductosPorPrecio(); break;
+            case 1: consultarProveedorPorCUIT(); system("pause"); break;
+            case 2: consultarProveedorPorTelefono(); system("pause"); break;
+            case 3: consultarProveedorPorEmail(); system("pause"); break;
+            case 4: consultarProveedorPorDireccion(); system("pause"); break;
+            case 5: listarProductosPorCantidad(); system("pause"); break;
+            case 6: listarProductosPorTipo(); system("pause"); break;
+            case 7: listarProductosPorPrecio(); system("pause"); break;
         }
     } while(opcion != 0);
 }

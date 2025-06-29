@@ -38,12 +38,15 @@ void informes::mostrarMenu(){
         switch (opcion) {
             case 1:
                 productosConMasStock();
+                system("pause");
                 break;
             case 2:
                 productosConMenosStock();
+                system("pause");
                 break;
             case 3:
                 comprasPorMes();
+                system("pause");
                 break;
             case 4:{
                 int umbral;
@@ -56,18 +59,23 @@ void informes::mostrarMenu(){
             }
             case 5:
                 cantidadProductosActivosInactivos();
+                system("pause");
                 break;
             case 6:
                 totalGastadoPorMes();
+                system("pause");
                 break;
             case 7:
                 proveedorMasCompras();
+                system("pause");
                 break;
             case 8:
                 top3ProveedoresMasFrecuentes();
+                system("pause");
                 break;
             case 9:
                 cantidadProveedoresActivosInactivos();
+                system("pause");
                 break;
             case 0:
                 return;
