@@ -39,9 +39,8 @@ void Consultas::menuconsultas(){
             case 7: listarProductosPorPrecio(); break;
         }
     } while(opcion != 0);
-
 }
-
+  
 void Consultas::mostrarProveedoresActivos(){
 ProveedorArchivo dat;
 int cantidad = dat.getCantidadRegistros();
@@ -86,121 +85,6 @@ for (int o=0; o<cantidad; o++){
 delete [] vecProductos;
 }
 
-void Consultas::buscarProveedorPorCUIT(){
-    string valor;
-    cout << "CUIT a buscar: ";
-    getline(cin, valor);
-    ProveedorArchivo arch;
-    int cant = arch.getCantidadRegistros();
-    bool encontrado=false;
-    for(int i=0;i<cant;i++){
-        Proveedores p = arch.leerUno(i);
-        if(p.getEstado() && valor==p.getCUIT()){
-            p.Mostrar();
-            encontrado=true;
-        }
-    }
-    if(!encontrado) cout << "No se encontro proveedor" << endl;
-}
-
-void Consultas::buscarProveedorPorTelefono(){
-    string valor;
-    cout << "Telefono a buscar: ";
-    getline(cin, valor);
-    ProveedorArchivo arch;
-    int cant = arch.getCantidadRegistros();
-    bool encontrado=false;
-    for(int i=0;i<cant;i++){
-        Proveedores p = arch.leerUno(i);
-        if(p.getEstado() && valor==p.getTelefono()){
-            p.Mostrar();
-            encontrado=true;
-        }
-    }
-    if(!encontrado) cout << "No se encontro proveedor" << endl;
-}
-
-void Consultas::buscarProveedorPorEmail(){
-    string valor;
-    cout << "Email a buscar: ";
-    getline(cin, valor);
-    ProveedorArchivo arch;
-    int cant = arch.getCantidadRegistros();
-    bool encontrado=false;
-    for(int i=0;i<cant;i++){
-        Proveedores p = arch.leerUno(i);
-        if(p.getEstado() && valor==p.getemail()){
-            p.Mostrar();
-            encontrado=true;
-        }
-    }
-    if(!encontrado) cout << "No se encontro proveedor" << endl;
-}
-
-void Consultas::buscarProveedorPorDireccion(){
-    string valor;
-    cout << "Direccion a buscar: ";
-    getline(cin, valor);
-    ProveedorArchivo arch;
-    int cant = arch.getCantidadRegistros();
-    bool encontrado=false;
-    for(int i=0;i<cant;i++){
-        Proveedores p = arch.leerUno(i);
-        if(p.getEstado() && valor==p.getDireccion()){
-            p.Mostrar();
-            encontrado=true;
-        }
-    }
-    if(!encontrado) cout << "No se encontro proveedor" << endl;
-}
-
-void Consultas::productosOrdenadosPorCantidad(){
-    ProductosArchivo arch;
-    int cant = arch.cantidadTotalProductos();
-    vector<Productos> vec;
-    for(int i=0;i<cant;i++){
-        Productos p = arch.leer(i);
-        if(p.getEstado()) vec.push_back(p);
-    }
-    sort(vec.begin(), vec.end(),[](Productos a, Productos b){
-        return a.getstock() > b.getstock();
-    });
-    for(auto &p : vec){
-        arch.mostrarProductosActivos(p);
-    }
-}
-
-void Consultas::productosOrdenadosPorTipo(){
-    ProductosArchivo arch;
-    int cant = arch.cantidadTotalProductos();
-    vector<Productos> vec;
-    for(int i=0;i<cant;i++){
-        Productos p = arch.leer(i);
-        if(p.getEstado()) vec.push_back(p);
-    }
-    sort(vec.begin(), vec.end(),[](Productos a, Productos b){
-        return string(a.gettipoProducto()) < string(b.gettipoProducto());
-    });
-    for(auto &p : vec){
-        arch.mostrarProductosActivos(p);
-    }
-}
-
-void Consultas::productosOrdenadosPorPrecio(){
-    ProductosArchivo arch;
-    int cant = arch.cantidadTotalProductos();
-    vector<Productos> vec;
-    for(int i=0;i<cant;i++){
-        Productos p = arch.leer(i);
-        if(p.getEstado()) vec.push_back(p);
-    }
-    sort(vec.begin(), vec.end(),[](Productos a, Productos b){
-        return a.getprecioUnitario() < b.getprecioUnitario();
-    });
-    for(auto &p : vec){
-        arch.mostrarProductosActivos(p);
-    }
-}
 
 
 
@@ -318,5 +202,5 @@ void Consultas::listarProductosPorPrecio(){
     for(auto &p: vec){
         arch.mostrarProductosActivos(p);
     }
-}:
+}
 
