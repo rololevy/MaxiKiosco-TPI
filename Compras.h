@@ -1,6 +1,7 @@
 #pragma once
 #include "Fecha.h"
 #include <iostream>
+#include <string>
 
 class Compras {
 private:
@@ -13,7 +14,7 @@ private:
 public:
     // Constructor por defecto
     Compras();
-    Compras(string IDcompra,string idPROV,Fecha fecha,float Importe, int estado);   /// para informes
+    Compras(std::string IDcompra,std::string idPROV,Fecha fecha,float Importe, int estado);   /// para informes
 
     // Getters
     const char* getIdProveedor();
